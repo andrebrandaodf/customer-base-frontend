@@ -1,0 +1,25 @@
+<mat-card class="novoItem">
+    <mat-card-title>Alterar Item</mat-card-title>
+    <form>
+        <mat-form-field>
+            <input matInput placeholder="Nome" [(ngModel)]="product.name" name="name">
+        </mat-form-field>
+        <mat-form-field>
+            <input matInput placeholder="Apresentação" [(ngModel)]="product.presentation" name="presentation">
+        </mat-form-field>
+        <mat-form-field>
+            <input matInput placeholder="Número do Registro" [(ngModel)]="product.recordNumber" name="recordNumber">
+        </mat-form-field>
+        <mat-form-field>
+            <input matInput placeholder="Fabricante" [(ngModel)]="product.manufacturer" name="manufacturer">
+        </mat-form-field>
+    </form>
+</mat-card>
+
+<button mat-raised-button (click)="updateProduct()">
+    Atualizar
+</button>
+
+<button mat-raised-button (click)="cancel()">
+    Cancelar
+</button>

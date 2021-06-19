@@ -1,0 +1,34 @@
+<mat-card class="novoItem">
+    <mat-card-title>Novo Item</mat-card-title>
+    <form>
+        <mat-form-field>
+            <input matInput placeholder="Nome do Produto" [(ngModel)]="product.name" name="name">
+        </mat-form-field>
+        <mat-form-field>
+            <input matInput placeholder="Apresentação" [(ngModel)]="product.presentation" name="presentation">
+        </mat-form-field>
+        <mat-form-field>
+            <input matInput placeholder="Número do Registro" [(ngModel)]="product.recordNumber" name="recordNumber">
+        </mat-form-field>
+        <mat-form-field>
+            <input matInput placeholder="Fabricante" [(ngModel)]="product.manufacturer" name="manufacturer">
+        </mat-form-field>
+        <mat-form-field>
+            <input matInput placeholder="Bula do Profissional da Saúde" [(ngModel)]="product.bullProfessionalHealth" name="bullProfessionalHealth">
+        </mat-form-field>
+        <mat-form-field>
+            <input matInput placeholder="Bula do Paciente" [(ngModel)]="product.bullPatient" name="bullPatient">
+        </mat-form-field>
+        <mat-form-field>
+            <input matInput placeholder="Ficha Técnica do Produto" [(ngModel)]="product.tokenTechniqueProduct" name="tokenTechniqueProduct">
+        </mat-form-field>
+    </form>
+</mat-card>
+
+<button mat-raised-button (click)="createProduct()">
+    Salvar
+</button>
+
+<button mat-raised-button (click)="cancel()">
+    Cancelar
+</button>
