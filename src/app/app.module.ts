@@ -1,38 +1,29 @@
-import { NgModule, LOCALE_ID } from '@angular/core';
-import { BrowserModule } from '@angular/platform-browser';
-
-import { HttpClientModule, HTTP_INTERCEPTORS}from '@angular/common/http';
-import { AppRoutingModule } from './app-routing.module';
-import { AppComponent } from './app.component';
-import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { LoginComponent } from './components/login/login.component';
-
-import { FormsModule, ReactiveFormsModule }from '@angular/forms';
+import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
+import { LOCALE_ID, NgModule } from '@angular/core';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { MatButtonModule } from '@angular/material/button';
+import { MatCardModule } from '@angular/material/card';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
-import { MatTableModule } from '@angular/material/table';
-import { MatPaginatorModule } from '@angular/material/paginator';
-import { MatSortModule } from '@angular/material/sort';
-import { RouterModule } from '@angular/router';
-
-import { MatToolbarModule } from '@angular/material/toolbar';
-import { MatSidenavModule } from '@angular/material/sidenav';
-import { MatCardModule } from '@angular/material/card';
 import { MatListModule } from '@angular/material/list';
-import { MatButtonModule } from '@angular/material/button';
+import { MatPaginatorModule } from '@angular/material/paginator';
+import { MatSidenavModule } from '@angular/material/sidenav';
 import { MatSnackBarModule } from '@angular/material/snack-bar';
+import { MatSortModule } from '@angular/material/sort';
+import { MatTableModule } from '@angular/material/table';
+import { MatToolbarModule } from '@angular/material/toolbar';
+import { BrowserModule } from '@angular/platform-browser';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { RouterModule } from '@angular/router';
+import { AppRoutingModule } from './app-routing.module';
+import { AppComponent } from './app.component';
+import { LoginComponent } from './shared/login/login.component';
+import { HeaderInterceptor } from './interceptors/header.interceptor';
+import { AuthService } from './services/auth.service';
 import { HomeComponent } from './views/home/home.component';
-import { AuthService } from './components/service/auth.service';
-import { InterceptorService } from './components/service/interceptor.service';
-
 
 @NgModule({
-  declarations: [
-    AppComponent,
-    LoginComponent,
-    HomeComponent,
-
-  ],
+  declarations: [AppComponent, LoginComponent, HomeComponent],
   imports: [
     BrowserModule,
     AppRoutingModule,
@@ -52,19 +43,20 @@ import { InterceptorService } from './components/service/interceptor.service';
     MatPaginatorModule,
     MatSortModule,
     ReactiveFormsModule,
-    RouterModule
+    RouterModule,
   ],
   providers: [
     AuthService,
     {
-    provide: LOCALE_ID,
-    useValue: 'pt-BR',
-  },
-  {
-    provide: HTTP_INTERCEPTORS,
-    useClass: InterceptorService, multi:true
-  }
-],
-  bootstrap: [AppComponent]
+      provide: LOCALE_ID,
+      useValue: 'pt-BR',
+    },
+    {
+      provide: HTTP_INTERCEPTORS,
+      useClass: HeaderInterceptor,
+      multi: true,
+    },
+  ],
+  bootstrap: [AppComponent],
 })
-export class AppModule { }
+export class AppModule {}

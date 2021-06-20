@@ -13,7 +13,10 @@ import { NavbarComponent } from '../template/navbar/navbar.component';
 
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { MatToolbarModule } from '@angular/material/toolbar';
-import { MatSidenavModule } from '@angular/material/sidenav';
+import {
+  MatSidenavModule,
+  MatSidenavContainer,
+} from '@angular/material/sidenav';
 import { MatListModule } from '@angular/material/list';
 import { MatCardModule } from '@angular/material/card';
 import { MatButtonModule } from '@angular/material/button';
@@ -29,7 +32,6 @@ import { FooterComponent } from '../template/footer/footer.component';
 import { RouterModule } from '@angular/router';
 import { AdminRoutingModule } from './admin-routing.module';
 import { HeaderComponent } from '../template/header/header.component';
-
 
 @NgModule({
   declarations: [
@@ -64,7 +66,8 @@ import { HeaderComponent } from '../template/header/header.component';
     MatTableModule,
     MatPaginatorModule,
     MatSortModule,
-    ReactiveFormsModule
-  ]
+    ReactiveFormsModule,
+  ],
+  providers: [MatSidenavContainer],
 })
-export class AdminModule { }
+export class AdminModule {}
