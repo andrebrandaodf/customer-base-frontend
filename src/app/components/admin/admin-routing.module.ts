@@ -37,19 +37,19 @@ const routes: Routes = [
         component: ProductDeleteComponent,
       },
       {
-        path: 'medias',
+        path: 'media',
         component: MediaVideoCrudComponent,
       },
       {
-        path: 'medias/create',
+        path: 'media/create',
         component: MediaVideoComponent,
       },
       {
-        path: 'medias/update/:id',
+        path: 'media/update/:id',
         component: MediaVideoUpdateComponent,
       },
       {
-        path: 'medias/delete/:id',
+        path: 'media/delete/:id',
         component: MediaVideoDeleteComponent,
       },
     ],

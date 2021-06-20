@@ -10,7 +10,7 @@ import { MediaVideoService } from 'src/app/services/media-video.service';
 })
 export class MediaVideoUpdateComponent implements OnInit {
   mediaVideo: MediaVideo = new MediaVideo();
-  private id!: number;
+  private id?: number;
 
   constructor(
     private mediaVideoService: MediaVideoService,
@@ -38,11 +38,11 @@ export class MediaVideoUpdateComponent implements OnInit {
     console.log(this.mediaVideo);
     this.mediaVideoService.update(this.mediaVideo).subscribe(() => {
       this.mediaVideoService.showMessage('Vídeo atualizado com sucesso!');
-      this.router.navigate(['/medias']);
+      this.router.navigate(['admin/media']);
     });
   }
 
   cancel(): void {
-    this.router.navigate(['/medias']);
+    this.router.navigate(['admin/media']);
   }
 }

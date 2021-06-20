@@ -36,11 +36,11 @@ export class ProductUpdateComponent implements OnInit {
     console.log(this.product);
     this.productService.update(this.product).subscribe(() => {
       this.productService.showMessage('Produto atualizado com sucesso!');
-      this.router.navigate(['/products']);
+      this.router.navigate(['admin/product']);
     });
   }
 
   cancel(): void {
-    this.router.navigate(['/products']);
+    this.router.navigate(['admin/product']);
   }
 }

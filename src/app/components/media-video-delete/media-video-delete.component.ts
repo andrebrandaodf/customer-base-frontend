@@ -38,7 +38,7 @@ export class MediaVideoDeleteComponent implements OnInit {
     this.mediaVideoService.delete(this.id).subscribe(
       () => {
         this.mediaVideoService.showMessage('Vídeo deletado com sucesso!');
-        this.router.navigate(['/medias']);
+        this.router.navigate(['admin/media']);
       },
       (errow) => {
         this.mediaVideoService.showMessage(`Erro na solicitação: ${errow}`);
@@ -47,6 +47,6 @@ export class MediaVideoDeleteComponent implements OnInit {
   }
 
   cancel(): void {
-    this.router.navigate(['/medias']);
+    this.router.navigate(['admin/media']);
   }
 }

@@ -18,12 +18,12 @@ export class ProductComponent implements OnInit {
   createProduct(): void {
     this.productService.create(this.product).subscribe(() => {
       this.productService.showMessage('Produto cadastrado!');
-      this.router.navigate(['/products']);
+      this.router.navigate(['admin/product']);
     });
   }
 
   //preciso Limpar o formulário
   cancel(): void {
-    this.router.navigate(['/products']);
+    this.router.navigate(['admin/product']);
   }
 }

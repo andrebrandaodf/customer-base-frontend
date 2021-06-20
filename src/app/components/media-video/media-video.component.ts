@@ -22,11 +22,11 @@ export class MediaVideoComponent implements OnInit {
   createMedia(): void {
     this.mediaVideoService.create(this.mediaVideo).subscribe(() => {
       this.mediaVideoService.showMessage('Vídeo Inserido com sucesso!');
-      this.router.navigate(['/medias']);
+      this.router.navigate(['admin/media']);
     });
   }
 
   cancel(): void {
-    this.router.navigate(['/medias']);
+    this.router.navigate(['admin/media']);
   }
 }

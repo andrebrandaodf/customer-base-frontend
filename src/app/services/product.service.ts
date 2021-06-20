@@ -22,24 +22,24 @@ export class ProductService {
   }
 
   create(product: Product) {
-    return this.http.post(`${environment.baseUrl}/products`, product);
+    return this.http.post(`${environment.baseUrl}/product`, product);
   }
 
   getAll() {
-    return this.http.get(`${environment.baseUrl}/products`);
+    return this.http.get(`${environment.baseUrl}/product`);
   }
 
   read() {
-    return this.http.get(`${environment.baseUrl}/products`);
+    return this.http.get(`${environment.baseUrl}/product`);
   }
 
   readById(id: number) {
-    const url = `${environment.baseUrl}/products/${id}`;
+    const url = `${environment.baseUrl}/product/${id}`;
     return this.http.get<Product>(url);
   }
 
   update(product: Product) {
-    const url = `${environment.baseUrl}/products/${product.id}`;
+    const url = `${environment.baseUrl}/product/${product.id}`;
     return this.http.put<Product>(url, product).pipe(
       map((obj) => obj),
       catchError((e) => this.errorHandler(e))
@@ -47,7 +47,7 @@ export class ProductService {
   }
 
   delete(id: number) {
-    const url = `${environment.baseUrl}/products/${id}`;
+    const url = `${environment.baseUrl}/product/${id}`;
     return this.http.delete(url);
   }
 

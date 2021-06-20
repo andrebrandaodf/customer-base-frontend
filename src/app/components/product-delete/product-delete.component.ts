@@ -35,7 +35,7 @@ export class ProductDeleteComponent implements OnInit {
     this.productService.delete(this.id).subscribe(
       () => {
         this.productService.showMessage('Produto deletado com sucesso!');
-        this.router.navigate(['/product']);
+        this.router.navigate(['admin/product']);
       },
       (errow) => {
         this.productService.showMessage(`Erro na solicitação: ${errow}`);
@@ -44,6 +44,6 @@ export class ProductDeleteComponent implements OnInit {
   }
 
   cancel(): void {
-    this.router.navigate(['/product']);
+    this.router.navigate(['admin/product']);
   }
 }
