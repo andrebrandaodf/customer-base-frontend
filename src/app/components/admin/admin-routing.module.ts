@@ -10,6 +10,7 @@ import { ProductDeleteComponent } from '../product-delete/product-delete.compone
 import { ProductUpdateComponent } from '../product-update/product-update.component';
 import { ProductComponent } from '../product/product.component';
 import { AdminComponent } from './admin.component';
+import { BlogComponent } from '../blog/blog.component';
 
 const routes: Routes = [
   {
@@ -52,6 +53,10 @@ const routes: Routes = [
         path: 'media/delete/:id',
         component: MediaVideoDeleteComponent,
       },
+      {
+        path: 'blog',
+        component: BlogComponent,
+      },
     ],
   },
 ];
@@ -61,4 +66,3 @@ const routes: Routes = [
   exports: [RouterModule],
 })
 export class AdminRoutingModule {}
-// export const routing: ModuleWithProviders = RouterModule.forChild(routes);

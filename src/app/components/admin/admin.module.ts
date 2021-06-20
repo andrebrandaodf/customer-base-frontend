@@ -32,6 +32,7 @@ import { FooterComponent } from '../template/footer/footer.component';
 import { RouterModule } from '@angular/router';
 import { AdminRoutingModule } from './admin-routing.module';
 import { HeaderComponent } from '../template/header/header.component';
+import { BlogComponent } from '../blog/blog.component';
 
 @NgModule({
   declarations: [
@@ -49,6 +50,7 @@ import { HeaderComponent } from '../template/header/header.component';
     MediaVideoReadComponent,
     MediaVideoUpdateComponent,
     MediaVideoCrudComponent,
+    BlogComponent,
   ],
   imports: [
     CommonModule,
