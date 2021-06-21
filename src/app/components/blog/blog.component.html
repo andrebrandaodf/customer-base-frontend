@@ -1,6 +1,16 @@
-<h1>Editor de Texto</h1>
-
-<ckeditor [(ngModel)]="ckeditorContent"> </ckeditor>
-
-<h1>Resultado</h1>
-{{ ckeditorContent }}
+<h1>Blog Hipolabor</h1>
+<editor
+  [init]="{
+    height: 500,
+    menubar: false,
+    plugins: [
+      'advlist autolink lists link image charmap print preview anchor',
+      'searchreplace visualblocks code fullscreen',
+      'insertdatetime media table paste code help wordcount'
+    ],
+    toolbar:
+      'undo redo | formatselect | bold italic backcolor | \
+      alignleft aligncenter alignright alignjustify | \
+      bullist numlist outdent indent | removeformat | help'
+  }"
+></editor>

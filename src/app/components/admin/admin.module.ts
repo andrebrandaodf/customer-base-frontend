@@ -33,7 +33,7 @@ import { NavbarComponent } from '../template/navbar/navbar.component';
 import { AdminRoutingModule } from './admin-routing.module';
 import { AdminComponent } from './admin.component';
 
-import { CKEditorModule } from 'ng2-ckeditor';
+import { EditorModule } from '@tinymce/tinymce-angular';
 
 @NgModule({
   declarations: [
@@ -70,7 +70,7 @@ import { CKEditorModule } from 'ng2-ckeditor';
     MatPaginatorModule,
     MatSortModule,
     ReactiveFormsModule,
-    CKEditorModule,
+    EditorModule,
   ],
   providers: [MatSidenavContainer],
 })
