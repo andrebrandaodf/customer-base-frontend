@@ -2,7 +2,7 @@
     <div id="layoutAuthentication">
         <div id="layoutAuthentication_content">
             <main>
-                <div class="container">
+                <div class="container-fluid">
                     <div class="row justify-content-center">
                         <div class="col-lg-5">
                             <div class="card shadow-lg border-0 rounded-lg mt-5">
@@ -14,11 +14,13 @@
                                 <div class="card-body">
                                     <form [formGroup]="form">
                                         <div class="form-floating mb-3">
-                                            <input formControlName="username" class="form-control" id="username" type="text" />
+                                            <input formControlName="username" class="form-control" id="username"
+                                                type="text" />
                                             <label for="username">Username</label>
                                         </div>
                                         <div class="form-floating mb-3">
-                                            <input formControlName="password" class="form-control" id="password" type="password" />
+                                            <input formControlName="password" class="form-control" id="password"
+                                                type="password" />
                                             <label for="password" for="password">Password</label>
                                         </div>
                                         <!-- <div class="form-check mb-3">

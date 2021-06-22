@@ -1,6 +1,6 @@
-<div class="container">
-  <div class="mat-elevation-z8">
-    <table mat-table [dataSource]="blog" class="table table-dark table-hover">
+<div class="container-fluid">
+  <div class="mat-elevation-z2">
+    <table *ngIf="blog && blog.length > 0; else empty" mat-table [dataSource]="blog" class="table table-hover">
       <!-- Id Column -->
       <ng-container matColumnDef="id">
         <th mat-header-cell *matHeaderCellDef>Id</th>
@@ -37,5 +37,10 @@
       <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
       <tr mat-row *matRowDef="let row; columns: displayedColumns"></tr>
     </table>
+    <ng-template #empty>
+      <div class="alert alert-primary" role="alert">
+        Não há registros!
+      </div>
+    </ng-template>
   </div>
 </div>
