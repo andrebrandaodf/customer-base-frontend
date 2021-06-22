@@ -13,17 +13,22 @@ export class BlogComponent {
 
   config = {
     height: 500,
-    menubar: false,
-    plugins: [
-      'advlist autolink lists link image charmap print preview anchor',
-      'searchreplace visualblocks code fullscreen',
-      'insertdatetime media table paste code help wordcount',
-    ],
-    toolbar:
-      'undo redo | formatselect | bold italic backcolor | \
-      alignleft aligncenter alignright alignjustify | \
-      bullist numlist outdent indent | removeformat | help',
-
+    plugins: `print preview paste importcss searchreplace autolink save
+      directionality code visualblocks visualchars fullscreen image link template
+      codesample table charmap hr pagebreak nonbreaking anchor toc insertdatetime
+      advlist lists wordcount imagetools textpattern noneditable help charmap emoticons`,
+    menubar: 'file edit view insert format tools table help',
+    toolbar: `undo redo fullscreen | bold italic underline strikethrough | fontselect
+      fontsizeselect formatselect | alignleft aligncenter alignright alignjustify |
+      outdent indent |  numlist bullist | forecolor backcolor removeformat | pagebreak |
+      charmap emoticons | fullscreen  preview save print | insertfile image template link
+      anchor codesample | ltr rtl`,
+    toolbar_sticky: true,
+    image_caption: true,
+    quickbars_selection_toolbar:
+      'bold italic | quicklink h2 h3 blockquote quickimage quicktable',
+    toolbar_mode: 'sliding',
+    contextmenu: 'link image imagetools table',
     language: 'pt_BR',
     file_picker_callback: (callback: any, value: any, meta: any) => {
       /* Provide file and text for the link dialog */

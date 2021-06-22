@@ -29,10 +29,6 @@ export class AuthService {
     this.router.navigate(['/login']);
   }
 
-  isAuthenticated() {
-    return this.usuarioAutenticado;
-  }
-
   private showNavBar(ifShow: boolean) {
     this.showNavBarEmitter.emit(ifShow);
   }

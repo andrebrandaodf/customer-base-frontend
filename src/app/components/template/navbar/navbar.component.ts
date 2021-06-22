@@ -22,7 +22,7 @@ export class NavbarComponent implements OnInit {
   }
 
   isAuth() {
-    return this.authService.isAuthenticated();
+    return this.authService.usuarioEstaAutenticado();
   }
 
   onLogout() {

@@ -4,6 +4,10 @@ import { LoginComponent } from './shared/login/login.component';
 
 const routes: Routes = [
   {
+    path: '',
+    component: LoginComponent,
+  },
+  {
     path: 'login',
     component: LoginComponent,
   },
@@ -11,6 +15,10 @@ const routes: Routes = [
     path: 'admin',
     loadChildren: () =>
       import('./components/admin/admin.module').then((m) => m.AdminModule),
+  },
+  {
+    path: '**',
+    redirectTo: '',
   },
 ];
 

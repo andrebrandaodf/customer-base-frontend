@@ -57,7 +57,7 @@ export class BlogService {
   }
 
   uploadFile(url: FormData) {
-    return this.http.post(`${environment.baseUrl}/blog`, url);
+    return this.http.post(`${environment.baseUrl}/storage/uploadFile`, url);
     // const file = ev.target.files[0];
 
     // const formData = new FormData();
