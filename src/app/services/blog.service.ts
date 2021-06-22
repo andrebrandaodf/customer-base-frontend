@@ -1,4 +1,4 @@
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpRequest } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { MatSnackBar } from '@angular/material/snack-bar';
 import { EMPTY, Observable } from 'rxjs';
@@ -54,5 +54,13 @@ export class BlogService {
   errorHandler(e: any): Observable<any> {
     this.showMessage('Ocorreu um erro!', true);
     return EMPTY;
+  }
+
+  uploadFile(url: FormData) {
+    return this.http.post(`${environment.baseUrl}/blog`, url);
+    // const file = ev.target.files[0];
+
+    // const formData = new FormData();
+    // const request = new HttpRequest('POST', url, formData);
   }
 }

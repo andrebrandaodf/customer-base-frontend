@@ -17,30 +17,21 @@
               aria-describedby="basic-addon1"
             />
           </div>
-          <editor
-            [init]="{
-              height: 500,
-              menubar: false,
-              plugins: [
-                'advlist autolink lists link image charmap print preview anchor',
-                'searchreplace visualblocks code fullscreen',
-                'insertdatetime media table paste code help wordcount'
-              ],
-              toolbar:
-                'undo redo | formatselect | bold italic backcolor | \
-      alignleft aligncenter alignright alignjustify | \
-      bullist numlist outdent indent | removeformat | help'
-            }"
-          >
-          </editor>
-          <input
-            type="text"
-            class="form-control"
-            placeholder="Url"
-            aria-label="title"
-            [(ngModel)]="blog.description"
-            aria-describedby="basic-addon1"
-          />
+          <editor [init]="config"> </editor>
+          <br />
+          <div class="input-group mb-3">
+            <span class="input-group-text" id="basic-addon1"
+              ><i class="fas fa-link"></i
+            ></span>
+            <input
+              type="text"
+              class="form-control"
+              placeholder="url"
+              aria-label="title"
+              [(ngModel)]="blog.description"
+              aria-describedby="basic-addon1"
+            />
+          </div>
         </div>
       </div>
     </div>
