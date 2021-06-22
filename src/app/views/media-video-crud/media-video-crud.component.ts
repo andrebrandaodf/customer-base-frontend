@@ -5,7 +5,7 @@ import { Component, OnInit } from '@angular/core';
 @Component({
   selector: 'app-media-video-crud',
   templateUrl: './media-video-crud.component.html',
-  styleUrls: ['./media-video-crud.component.css'],
+  styleUrls: ['./media-video-crud.component.scss'],
 })
 export class MediaVideoCrudComponent implements OnInit {
   constructor(private router: Router, private headerService: HeaderService) {

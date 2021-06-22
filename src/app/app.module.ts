@@ -20,9 +20,12 @@ import { AppComponent } from './app.component';
 import { LoginComponent } from './shared/login/login.component';
 import { HeaderInterceptor } from './interceptors/header.interceptor';
 import { AuthService } from './services/auth.service';
+import { NavComponent } from './nav/nav.component';
+import { LayoutModule } from '@angular/cdk/layout';
+import { MatIconModule } from '@angular/material/icon';
 
 @NgModule({
-  declarations: [AppComponent, LoginComponent],
+  declarations: [AppComponent, LoginComponent, NavComponent],
   imports: [
     BrowserModule,
     AppRoutingModule,
@@ -43,6 +46,8 @@ import { AuthService } from './services/auth.service';
     MatSortModule,
     ReactiveFormsModule,
     RouterModule,
+    LayoutModule,
+    MatIconModule,
   ],
   providers: [
     AuthService,

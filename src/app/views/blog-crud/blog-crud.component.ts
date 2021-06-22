@@ -5,7 +5,7 @@ import { Router } from '@angular/router';
 @Component({
   selector: 'app-blog-crud',
   templateUrl: './blog-crud.component.html',
-  styleUrls: ['./blog-crud.component.css'],
+  styleUrls: ['./blog-crud.component.scss'],
 })
 export class BlogCrudComponent implements OnInit {
   constructor(private router: Router, private headerService: HeaderService) {

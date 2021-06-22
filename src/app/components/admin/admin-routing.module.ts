@@ -1,19 +1,20 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { HomeComponent } from 'src/app/views/home/home.component';
-import { MediaVideoCrudComponent } from 'src/app/views/media-video-crud/media-video-crud.component';
-import { ProductCrudComponent } from 'src/app/views/product-crud/product-crud.component';
-import { MediaVideoDeleteComponent } from '../media-video-delete/media-video-delete.component';
-import { MediaVideoUpdateComponent } from '../media-video-update/media-video-update.component';
-import { MediaVideoComponent } from '../media-video/media-video.component';
-import { ProductDeleteComponent } from '../product-delete/product-delete.component';
-import { ProductUpdateComponent } from '../product-update/product-update.component';
-import { ProductComponent } from '../product/product.component';
 import { AdminComponent } from './admin.component';
-import { BlogComponent } from '../blog/blog.component';
-import { BlogUpdateComponent } from '../blog-update/blog-update.component';
-import { BlogDeleteComponent } from '../blog-delete/blog-delete.component';
+import { HomeComponent } from 'src/app/views/home/home.component';
+import { ProductCrudComponent } from 'src/app/views/product-crud/product-crud.component';
+import { ProductUpdateComponent } from '../products/product-update/product-update.component';
+import { ProductDeleteComponent } from '../products/product-delete/product-delete.component';
+import { MediaVideoCrudComponent } from 'src/app/views/media-video-crud/media-video-crud.component';
+import { MediaVideoUpdateComponent } from '../media/media-video-update/media-video-update.component';
+import { MediaVideoDeleteComponent } from '../media/media-video-delete/media-video-delete.component';
 import { BlogCrudComponent } from 'src/app/views/blog-crud/blog-crud.component';
+import { BlogUpdateComponent } from '../blog/blog-update/blog-update.component';
+import { BlogDeleteComponent } from '../blog/blog-delete/blog-delete.component';
+import { ProductCreateComponent } from '../products/product-create/product-create.component';
+import { MediaVideoCreateComponent } from '../media/media-video-create/media-video-create.component';
+import { BlogCreateComponent } from '../blog/blog-create/blog-create.component';
+
 
 const routes: Routes = [
   {
@@ -30,7 +31,7 @@ const routes: Routes = [
       },
       {
         path: 'product/create',
-        component: ProductComponent,
+        component: ProductCreateComponent,
       },
       {
         path: 'product/update/:id',
@@ -46,7 +47,7 @@ const routes: Routes = [
       },
       {
         path: 'media/create',
-        component: MediaVideoComponent,
+        component: MediaVideoCreateComponent,
       },
       {
         path: 'media/update/:id',
@@ -62,7 +63,7 @@ const routes: Routes = [
       },
       {
         path: 'blog/create',
-        component: BlogComponent,
+        component: BlogCreateComponent,
       },
       {
         path: 'blog/update/:id',
@@ -80,4 +81,4 @@ const routes: Routes = [
   imports: [RouterModule.forChild(routes)],
   exports: [RouterModule],
 })
-export class AdminRoutingModule {}
+export class AdminRoutingModule { }
