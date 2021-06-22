@@ -25,7 +25,7 @@ import { LayoutModule } from '@angular/cdk/layout';
 import { MatIconModule } from '@angular/material/icon';
 
 @NgModule({
-  declarations: [AppComponent, LoginComponent, NavComponent],
+  declarations: [AppComponent, LoginComponent, NavComponent,],
   imports: [
     BrowserModule,
     AppRoutingModule,
@@ -63,4 +63,4 @@ import { MatIconModule } from '@angular/material/icon';
   ],
   bootstrap: [AppComponent],
 })
-export class AppModule {}
+export class AppModule { }

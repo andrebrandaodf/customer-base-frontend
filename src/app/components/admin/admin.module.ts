@@ -21,7 +21,6 @@ import { MediaVideoCrudComponent } from 'src/app/views/media-video-crud/media-vi
 import { ProductCrudComponent } from 'src/app/views/product-crud/product-crud.component';
 import { FooterComponent } from '../template/footer/footer.component';
 import { HeaderComponent } from '../template/header/header.component';
-import { NavbarComponent } from '../template/navbar/navbar.component';
 import { AdminRoutingModule } from './admin-routing.module';
 import { AdminComponent } from './admin.component';
 
@@ -45,7 +44,6 @@ import { BlogCreateComponent } from '../blog/blog-create/blog-create.component';
 @NgModule({
   declarations: [
     AdminComponent,
-    NavbarComponent,
     HeaderComponent,
     HomeComponent,
     FooterComponent,

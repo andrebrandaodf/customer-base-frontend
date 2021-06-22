@@ -13,7 +13,7 @@ export class AuthService {
 
   private usuarioAutenticado: boolean = false;
 
-  constructor(private httpClient: HttpClient, private router: Router) {}
+  constructor(private httpClient: HttpClient, private router: Router) { }
 
   login(user: User): Observable<any> {
     return this.httpClient.post(`${environment.baseUrl}/authenticate`, user);
