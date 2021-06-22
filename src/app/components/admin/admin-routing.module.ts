@@ -11,6 +11,8 @@ import { ProductUpdateComponent } from '../product-update/product-update.compone
 import { ProductComponent } from '../product/product.component';
 import { AdminComponent } from './admin.component';
 import { BlogComponent } from '../blog/blog.component';
+import { BlogUpdateComponent } from '../blog-update/blog-update.component';
+import { BlogDeleteComponent } from '../blog-delete/blog-delete.component';
 
 const routes: Routes = [
   {
@@ -56,6 +58,18 @@ const routes: Routes = [
       {
         path: 'blog',
         component: BlogComponent,
+      },
+      {
+        path: 'blog/create',
+        component: BlogComponent,
+      },
+      {
+        path: 'blog/update/:id',
+        component: BlogUpdateComponent,
+      },
+      {
+        path: 'blog/delete/:id',
+        component: BlogDeleteComponent,
       },
     ],
   },

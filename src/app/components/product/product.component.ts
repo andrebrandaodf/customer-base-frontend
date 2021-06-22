@@ -22,7 +22,6 @@ export class ProductComponent implements OnInit {
     });
   }
 
-  //preciso Limpar o formulário
   cancel(): void {
     this.router.navigate(['admin/product']);
   }

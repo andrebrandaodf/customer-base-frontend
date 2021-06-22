@@ -34,6 +34,11 @@ import { AdminRoutingModule } from './admin-routing.module';
 import { AdminComponent } from './admin.component';
 
 import { EditorModule } from '@tinymce/tinymce-angular';
+import { HomeComponent } from 'src/app/views/home/home.component';
+import { BlogDeleteComponent } from '../blog-delete/blog-delete.component';
+import { BlogReadComponent } from '../blog-read/blog-read.component';
+import { BlogUpdateComponent } from '../blog-update/blog-update.component';
+import { BlogCrudComponent } from 'src/app/views/blog-crud/blog-crud.component';
 
 @NgModule({
   declarations: [
@@ -52,6 +57,11 @@ import { EditorModule } from '@tinymce/tinymce-angular';
     MediaVideoUpdateComponent,
     MediaVideoCrudComponent,
     BlogComponent,
+    HomeComponent,
+    BlogDeleteComponent,
+    BlogReadComponent,
+    BlogUpdateComponent,
+    BlogCrudComponent,
   ],
   imports: [
     CommonModule,

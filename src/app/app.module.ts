@@ -20,10 +20,9 @@ import { AppComponent } from './app.component';
 import { LoginComponent } from './shared/login/login.component';
 import { HeaderInterceptor } from './interceptors/header.interceptor';
 import { AuthService } from './services/auth.service';
-import { HomeComponent } from './views/home/home.component';
 
 @NgModule({
-  declarations: [AppComponent, LoginComponent, HomeComponent],
+  declarations: [AppComponent, LoginComponent],
   imports: [
     BrowserModule,
     AppRoutingModule,
