@@ -13,6 +13,7 @@ import { AdminComponent } from './admin.component';
 import { BlogComponent } from '../blog/blog.component';
 import { BlogUpdateComponent } from '../blog-update/blog-update.component';
 import { BlogDeleteComponent } from '../blog-delete/blog-delete.component';
+import { BlogCrudComponent } from 'src/app/views/blog-crud/blog-crud.component';
 
 const routes: Routes = [
   {
@@ -57,7 +58,7 @@ const routes: Routes = [
       },
       {
         path: 'blog',
-        component: BlogComponent,
+        component: BlogCrudComponent,
       },
       {
         path: 'blog/create',

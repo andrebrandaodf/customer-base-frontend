@@ -13,6 +13,7 @@
               class="form-control"
               placeholder="Title"
               aria-label="title"
+              [(ngModel)]="blog.title"
               aria-describedby="basic-addon1"
             />
           </div>
@@ -30,7 +31,16 @@
       alignleft aligncenter alignright alignjustify | \
       bullist numlist outdent indent | removeformat | help'
             }"
-          ></editor>
+          >
+          </editor>
+          <input
+            type="text"
+            class="form-control"
+            placeholder="Url"
+            aria-label="title"
+            [(ngModel)]="blog.description"
+            aria-describedby="basic-addon1"
+          />
         </div>
       </div>
     </div>
