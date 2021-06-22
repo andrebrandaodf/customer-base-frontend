@@ -1,22 +1,44 @@
-<mat-card>
-    <mat-card-title>Novo Vídeo</mat-card-title>
-    <form>
+<div class="container">
+  <div class="mat-elevation-z8">
+    <mat-card class="novoProduto">
+      <mat-card-title>Novo Vídeo</mat-card-title>
+      <form>
         <mat-form-field>
-            <input matInput placeholder="Título" [(ngModel)]="mediaVideo.title" name="title">
+          <input
+            matInput
+            placeholder="Título"
+            [(ngModel)]="mediaVideo.title"
+            name="title"
+          />
         </mat-form-field>
         <mat-form-field>
-            <input matInput placeholder="Descrição" [(ngModel)]="mediaVideo.description" name="description">
+          <input
+            matInput
+            placeholder="Descrição"
+            [(ngModel)]="mediaVideo.description"
+            name="description"
+          />
         </mat-form-field>
         <mat-form-field>
-            <input matInput placeholder="URL Vídeo" [(ngModel)]="mediaVideo.urlVideo" name="url">
+          <input
+            matInput
+            placeholder="URL Vídeo"
+            [(ngModel)]="mediaVideo.urlVideo"
+            name="url"
+          />
         </mat-form-field>
-    </form>
+      </form>
+    </mat-card>
+  </div>
 
-</mat-card>
-
-<button mat-raised-button (click)="createMedia()">
+  <button
+    class="btn btn-outline-success"
+    mat-raised-button
+    (click)="createMedia()"
+  >
     Salvar
-</button>
-<button mat-raised-button (click)="cancel()">
+  </button>
+  <button class="btn btn-outline-dark" mat-raised-button (click)="cancel()">
     Cancelar
-</button>
+  </button>
+</div>

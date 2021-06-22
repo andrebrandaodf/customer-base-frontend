@@ -1,9 +1,17 @@
 form {
-    display: flex;
-    flex-direction: column;
-    margin-top: 20px;
+  background-color: #03bb85;
+  display: flex;
+  flex-direction: column;
+  margin-top: 1.5rem;
 }
 
 button {
-    margin: 20px 15px 0px 0px;
+  margin-bottom: 1.5rem;
+  margin-top: 1.5rem;
+  margin-left: 0.2rem;
+}
+
+.excluirProduto {
+  margin-top: 1.5rem;
+  background-color: #03bb85;
 }

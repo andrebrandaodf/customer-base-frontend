@@ -1,17 +1,17 @@
 form {
-    display: flex;
-    flex-direction: column;
-    margin-top: 20px;
+  background-color: #03bb85;
+  display: flex;
+  flex-direction: column;
+  margin-top: 1.5rem;
 }
 
 button {
-    margin-bottom: 30px;
-    margin-top: 20px;
-    margin-left: 0.2rem;
-    background-color: #4169E1;
-    color: #fff;
+  margin-bottom: 1.5rem;
+  margin-top: 1.5rem;
+  margin-left: 0.2rem;
 }
 
-.novoItem {
-    background-color: #03bb85;
+.novoProduto {
+  margin-top: 1.5rem;
+  background-color: #03bb85;
 }

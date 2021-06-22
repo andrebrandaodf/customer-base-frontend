@@ -1,5 +1,5 @@
 table {
-  width: 10%;
+  width: 100%;
 }
 
 .edit {
@@ -12,4 +12,10 @@ table {
 
 .delete > em {
   color: #e35e6b;
+}
+
+.mat-row .mat-cell {
+  border-bottom: 0.5rem solid transparent;
+  border-top: 0.5rem solid transparent;
+  cursor: pointer;
 }

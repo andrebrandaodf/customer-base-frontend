@@ -1,16 +1,38 @@
-<h1>Blog Hipolabor</h1>
-<editor
-  [init]="{
-    height: 500,
-    menubar: false,
-    plugins: [
-      'advlist autolink lists link image charmap print preview anchor',
-      'searchreplace visualblocks code fullscreen',
-      'insertdatetime media table paste code help wordcount'
-    ],
-    toolbar:
-      'undo redo | formatselect | bold italic backcolor | \
+<div class="container-fluid">
+  <div class="row">
+    <div class="col">
+      <div class="card">
+        <div class="card-body">
+          <h1>Blog Hipolabor</h1>
+          <div class="input-group mb-3">
+            <span class="input-group-text" id="basic-addon1"
+              ><i class="fas fa-heading"></i
+            ></span>
+            <input
+              type="text"
+              class="form-control"
+              placeholder="Title"
+              aria-label="title"
+              aria-describedby="basic-addon1"
+            />
+          </div>
+          <editor
+            [init]="{
+              height: 500,
+              menubar: false,
+              plugins: [
+                'advlist autolink lists link image charmap print preview anchor',
+                'searchreplace visualblocks code fullscreen',
+                'insertdatetime media table paste code help wordcount'
+              ],
+              toolbar:
+                'undo redo | formatselect | bold italic backcolor | \
       alignleft aligncenter alignright alignjustify | \
       bullist numlist outdent indent | removeformat | help'
-  }"
-></editor>
+            }"
+          ></editor>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

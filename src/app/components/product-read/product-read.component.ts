@@ -1,6 +1,7 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewChild } from '@angular/core';
 import { Product } from 'src/app/models/product.model';
 import { ProductService } from 'src/app/services/product.service';
+import { MatPaginator } from '@angular/material/paginator';
 
 @Component({
   selector: 'app-product-read',
@@ -8,6 +9,8 @@ import { ProductService } from 'src/app/services/product.service';
   styleUrls: ['./product-read.component.css'],
 })
 export class ProductReadComponent implements OnInit {
+  @ViewChild(MatPaginator) paginator!: MatPaginator;
+
   product: Product[] = [];
   displayedColumns = [
     'id',
@@ -31,4 +34,11 @@ export class ProductReadComponent implements OnInit {
       console.log(product);
     });
   }
+}
+
+export interface PeriodicElement {
+  name: string;
+  position: number;
+  weight: number;
+  symbol: string;
 }

@@ -1,22 +1,48 @@
-<mat-card>
-    <mat-card-title>Excluir Vídeo</mat-card-title>
-    <form>
+<div class="container">
+  <div class="mat-elevation-z8">
+    <mat-card class="excluirProduto">
+      <mat-card-title>Excluir Vídeo</mat-card-title>
+      <form>
         <mat-form-field>
-            <input matInput placeholder="Título" [value]="mediaVideo.title" disabled>
+          <input
+            matInput
+            placeholder="Título"
+            [value]="mediaVideo.title"
+            disabled
+          />
         </mat-form-field>
         <mat-form-field>
-            <input matInput placeholder="Descrição" [value]="mediaVideo.description" disabled>
+          <input
+            matInput
+            placeholder="Descrição"
+            [value]="mediaVideo.description"
+            disabled
+          />
         </mat-form-field>
         <mat-form-field>
-            <input matInput placeholder="Url Vídeo" [value]="mediaVideo.urlVideo" disabled>
+          <input
+            matInput
+            placeholder="Url Vídeo"
+            [value]="mediaVideo.urlVideo"
+            disabled
+          />
         </mat-form-field>
+      </form>
+    </mat-card>
+  </div>
 
-    </form>
-</mat-card>
-
-<button mat-raised-button (click)="deleteMedia()" color="warn">
+  <button
+    class="mb-2 btn btn-outline-danger"
+    mat-raised-button
+    (click)="deleteMedia()"
+  >
     Excluir
-</button>
-<button mat-raised-button (click)="cancel()">
+  </button>
+  <button
+    class="mb-2 btn btn-outline-dark"
+    mat-raised-button
+    (click)="cancel()"
+  >
     Cancelar
-</button>
+  </button>
+</div>
