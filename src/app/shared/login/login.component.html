@@ -24,10 +24,14 @@
                             <mat-form-field>
                                 <input matInput [type]="hide ? 'password' : 'text'" placeholder="Password"
                                     type="password" formControlName="password" name="password" required>
+
                                 <button mat-icon-button matSuffix (click)="hide = !hide"
                                     [attr.aria-label]="'Hide password'" [attr.aria-pressed]="hide">
                                     <mat-icon>{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
                                 </button>
+                                <mat-error *ngIf="form.controls.username.invalid && form.controls.username.touched">
+                                    <span *ngIf="form.controls.username.errors?.required"> Campo obrigatorio</span>
+                                </mat-error>
                             </mat-form-field>
                         </td>
                     </tr>
