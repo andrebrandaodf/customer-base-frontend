@@ -32,4 +32,5 @@ export class AuthService {
   private showNavBar(ifShow: boolean) {
     this.showNavBarEmitter.emit(ifShow);
   }
+
 }
