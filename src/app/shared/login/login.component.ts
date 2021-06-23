@@ -10,32 +10,33 @@ import { User } from '../../models/user.model';
   styleUrls: ['./login.component.scss']
 })
 export class LoginComponent implements OnInit {
-
+  hide = true;
   user: User = new User();
-  
+
   constructor(private formBuilder: FormBuilder, private authService: AuthService, private router: Router) { }
 
   ngOnInit(): void {
+
   }
 
   form: FormGroup = this.formBuilder.group({
-    username: [null,[Validators.required]],
-    password: [null,[Validators.required]]
+    username: [null, [Validators.required]],
+    password: [null, [Validators.required]]
   })
 
-  login(){
-    if(this.form.invalid){
+  login() {
+    if (this.form.invalid) {
       this.form.markAllAsTouched()
-      return 
+      return
     }
-    this.authService.login(this.form.value).subscribe(data =>{
+    this.authService.login(this.form.value).subscribe(data => {
       localStorage.setItem('token', data.token)
-      console.log("Sucesso! " , data)
+      console.log("Sucesso! ", data)
       this.router.navigate(['/admin'])
     },
-    erro =>{
-      console.log("Erro " , erro)
-    }
+      erro => {
+        console.log("Erro ", erro)
+      }
     )
   }
 }
