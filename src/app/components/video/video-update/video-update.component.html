@@ -4,18 +4,18 @@
       <mat-card-title>Alterar Vídeo</mat-card-title>
       <form>
         <mat-form-field>
-          <input matInput placeholder="Título" [(ngModel)]="mediaVideo.title" name="title" />
+          <input matInput placeholder="Título" [(ngModel)]="video.title" name="title" />
         </mat-form-field>
         <mat-form-field>
-          <input matInput placeholder="Descrição" [(ngModel)]="mediaVideo.description" name="description" />
+          <input matInput placeholder="Descrição" [(ngModel)]="video.description" name="description" />
         </mat-form-field>
         <mat-form-field>
-          <input matInput placeholder="Url Vídeo" [(ngModel)]="mediaVideo.urlVideo" name="url" />
+          <input matInput placeholder="Url Vídeo" [(ngModel)]="video.urlVideo" name="url" />
         </mat-form-field>
       </form>
     </mat-card>
   </div>
-  <button class="btn btn-outline-success" mat-raised-button (click)="updateMedia()">
+  <button class="btn btn-outline-success" mat-raised-button (click)="updateVideo()">
     Atualizar
   </button>
 

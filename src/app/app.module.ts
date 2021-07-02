@@ -23,9 +23,12 @@ import { AuthService } from './services/auth.service';
 import { NavComponent } from './nav/nav.component';
 import { LayoutModule } from '@angular/cdk/layout';
 import { MatIconModule } from '@angular/material/icon';
+import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
+import { MatProgressBarModule } from '@angular/material/progress-bar';
+import { SplashScreenComponent } from 'src/app/views/splash-screen/splash-screen.component';
 
 @NgModule({
-  declarations: [AppComponent, LoginComponent, NavComponent,],
+  declarations: [AppComponent, LoginComponent, NavComponent, SplashScreenComponent],
   imports: [
     BrowserModule,
     AppRoutingModule,
@@ -48,6 +51,8 @@ import { MatIconModule } from '@angular/material/icon';
     RouterModule,
     LayoutModule,
     MatIconModule,
+    MatProgressSpinnerModule,
+    MatProgressBarModule,
   ],
   providers: [
     AuthService,

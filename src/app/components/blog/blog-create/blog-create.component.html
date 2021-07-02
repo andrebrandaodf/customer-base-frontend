@@ -9,11 +9,11 @@
             <input type="text" class="form-control" placeholder="Title" aria-label="title" [(ngModel)]="blog.title"
               aria-describedby="basic-addon1" />
           </div>
-          <editor [init]="config"> </editor>
+          <editor [init]="config" [(ngModel)]="blog.description"> </editor>
           <br />
           <div class="input-group mb-3">
             <span class="input-group-text" id="basic-addon1"><i class="fas fa-link"></i></span>
-            <input type="text" class="form-control" placeholder="url" aria-label="title" [(ngModel)]="blog.description"
+            <input type="text" class="form-control" placeholder="url" aria-label="title" [(ngModel)]="blog.urlImage"
               aria-describedby="basic-addon1" />
           </div>
         </div>

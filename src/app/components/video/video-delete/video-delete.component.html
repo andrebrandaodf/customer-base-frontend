@@ -4,19 +4,19 @@
       <mat-card-title>Excluir Vídeo</mat-card-title>
       <form>
         <mat-form-field>
-          <input matInput placeholder="Título" [value]="mediaVideo.title" disabled />
+          <input matInput placeholder="Título" [value]="video.title" disabled />
         </mat-form-field>
         <mat-form-field>
-          <input matInput placeholder="Descrição" [value]="mediaVideo.description" disabled />
+          <input matInput placeholder="Descrição" [value]="video.description" disabled />
         </mat-form-field>
         <mat-form-field>
-          <input matInput placeholder="Url Vídeo" [value]="mediaVideo.urlVideo" disabled />
+          <input matInput placeholder="Url Vídeo" [value]="video.urlVideo" disabled />
         </mat-form-field>
       </form>
     </mat-card>
   </div>
 
-  <button class="mb-2 btn btn-outline-danger" mat-raised-button (click)="deleteMedia()">
+  <button class="mb-2 btn btn-outline-danger" mat-raised-button (click)="deleteVideo()">
     Excluir
   </button>
   <button class="mb-2 btn btn-outline-dark" mat-raised-button (click)="cancel()">

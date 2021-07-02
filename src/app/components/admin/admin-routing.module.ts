@@ -5,15 +5,15 @@ import { HomeComponent } from 'src/app/views/home/home.component';
 import { ProductCrudComponent } from 'src/app/views/product-crud/product-crud.component';
 import { ProductUpdateComponent } from '../products/product-update/product-update.component';
 import { ProductDeleteComponent } from '../products/product-delete/product-delete.component';
-import { MediaVideoCrudComponent } from 'src/app/views/media-video-crud/media-video-crud.component';
-import { MediaVideoUpdateComponent } from '../media/media-video-update/media-video-update.component';
-import { MediaVideoDeleteComponent } from '../media/media-video-delete/media-video-delete.component';
+import { VideoCrudComponent } from 'src/app/views/video-crud/video-crud.component';
 import { BlogCrudComponent } from 'src/app/views/blog-crud/blog-crud.component';
 import { BlogUpdateComponent } from '../blog/blog-update/blog-update.component';
 import { BlogDeleteComponent } from '../blog/blog-delete/blog-delete.component';
 import { ProductCreateComponent } from '../products/product-create/product-create.component';
-import { MediaVideoCreateComponent } from '../media/media-video-create/media-video-create.component';
+import { VideoCreateComponent } from '../video/video-create/video-create.component';
 import { BlogCreateComponent } from '../blog/blog-create/blog-create.component';
+import { VideoUpdateComponent } from '../video/video-update/video-update.component';
+import { VideoDeleteComponent } from '../video/video-delete/video-delete.component';
 
 
 const routes: Routes = [
@@ -42,20 +42,20 @@ const routes: Routes = [
         component: ProductDeleteComponent,
       },
       {
-        path: 'media',
-        component: MediaVideoCrudComponent,
+        path: 'video',
+        component: VideoCrudComponent,
       },
       {
-        path: 'media/create',
-        component: MediaVideoCreateComponent,
+        path: 'video/create',
+        component: VideoCreateComponent,
       },
       {
-        path: 'media/update/:id',
-        component: MediaVideoUpdateComponent,
+        path: 'video/update/:id',
+        component: VideoUpdateComponent,
       },
       {
-        path: 'media/delete/:id',
-        component: MediaVideoDeleteComponent,
+        path: 'video/delete/:id',
+        component: VideoDeleteComponent,
       },
       {
         path: 'blog',

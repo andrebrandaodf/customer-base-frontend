@@ -10,9 +10,13 @@
                 <table class="example-full-width" cellspacing="0">
                     <tr>
                         <td>
-                            <mat-form-field>
+                            <mat-form-field fxLayoutAlign="center center">
                                 <input matInput placeholder="Username" formControlName="username" name="username"
                                     required>
+                                <button mat-icon-button matSuffix (click)="hide = !hide"
+                                    [attr.aria-label]="'Hide username'" [attr.aria-pressed]="hide">
+                                    <mat-icon>account_circle</mat-icon>
+                                </button>
                                 <mat-error *ngIf="form.controls.username.invalid && form.controls.username.touched">
                                     <span *ngIf="form.controls.username.errors?.required"> Campo obrigatorio</span>
                                 </mat-error>
@@ -39,8 +43,9 @@
             </form>
         </mat-card-content>
         <mat-card-actions>
+
             <button mat-raised-button (click)="login()" color="primary">Entrar</button>
+
         </mat-card-actions>
     </mat-card>
-
 </div>

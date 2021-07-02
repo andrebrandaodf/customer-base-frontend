@@ -1,7 +1,6 @@
 <div class="container-fluid">
   <div class="mat-elevation-z2">
-    <table *ngIf="mediaVideo && mediaVideo.length > 0; else empty" mat-table [dataSource]="mediaVideo"
-      class="table table-hover">
+    <table *ngIf="video && video.length > 0; else empty" mat-table [dataSource]="video" class="table table-hover">
       <!-- Id Column -->
       <ng-container matColumnDef="id">
         <th mat-header-cell *matHeaderCellDef>Id</th>

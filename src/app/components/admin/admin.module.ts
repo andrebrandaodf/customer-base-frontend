@@ -17,7 +17,7 @@ import { MatTableModule } from '@angular/material/table';
 import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatIconModule } from '@angular/material/icon';
 import { RouterModule } from '@angular/router';
-import { MediaVideoCrudComponent } from 'src/app/views/media-video-crud/media-video-crud.component';
+import { VideoCrudComponent } from 'src/app/views/video-crud/video-crud.component';
 import { ProductCrudComponent } from 'src/app/views/product-crud/product-crud.component';
 import { FooterComponent } from '../template/footer/footer.component';
 import { HeaderComponent } from '../template/header/header.component';
@@ -32,14 +32,14 @@ import { ProductCreateComponent } from '../products/product-create/product-creat
 import { ProductDeleteComponent } from '../products/product-delete/product-delete.component';
 import { ProductReadComponent } from '../products/product-read/product-read.component';
 import { ProductUpdateComponent } from '../products/product-update/product-update.component';
-import { MediaVideoCreateComponent } from '../media/media-video-create/media-video-create.component';
-import { MediaVideoDeleteComponent } from '../media/media-video-delete/media-video-delete.component';
-import { MediaVideoReadComponent } from '../media/media-video-read/media-video-read.component';
-import { MediaVideoUpdateComponent } from '../media/media-video-update/media-video-update.component';
 import { BlogDeleteComponent } from '../blog/blog-delete/blog-delete.component';
 import { BlogReadComponent } from '../blog/blog-read/blog-read.component';
 import { BlogUpdateComponent } from '../blog/blog-update/blog-update.component';
 import { BlogCreateComponent } from '../blog/blog-create/blog-create.component';
+import { VideoCreateComponent } from '../video/video-create/video-create.component';
+import { VideoDeleteComponent } from '../video/video-delete/video-delete.component';
+import { VideoReadComponent } from '../video/video-read/video-read.component';
+import { VideoUpdateComponent } from '../video/video-update/video-update.component';
 
 @NgModule({
   declarations: [
@@ -52,16 +52,17 @@ import { BlogCreateComponent } from '../blog/blog-create/blog-create.component';
     ProductReadComponent,
     ProductUpdateComponent,
     ProductCrudComponent,
-    MediaVideoCreateComponent,
-    MediaVideoDeleteComponent,
-    MediaVideoReadComponent,
-    MediaVideoUpdateComponent,
-    MediaVideoCrudComponent,
+    VideoCreateComponent,
+    VideoDeleteComponent,
+    VideoReadComponent,
+    VideoUpdateComponent,
+    VideoCrudComponent,
     BlogCreateComponent,
     BlogDeleteComponent,
     BlogReadComponent,
     BlogUpdateComponent,
     BlogCrudComponent,
+
   ],
   imports: [
     CommonModule,

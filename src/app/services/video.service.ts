@@ -2,14 +2,14 @@ import { Observable, EMPTY } from 'rxjs';
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { MatSnackBar } from '@angular/material/snack-bar';
-import { MediaVideo } from '../models/media-video.model';
 import { environment } from 'src/environments/environment';
+import { Video } from '../models/video.model';
 
 @Injectable({
   providedIn: 'root',
 })
-export class MediaVideoService {
-  constructor(private snackBar: MatSnackBar, private http: HttpClient) {}
+export class VideoService {
+  constructor(private snackBar: MatSnackBar, private http: HttpClient) { }
 
   showMessage(msg: string, isError: boolean = false): void {
     this.snackBar.open(msg, 'x', {
@@ -20,30 +20,30 @@ export class MediaVideoService {
     });
   }
 
-  create(mediaVideo: MediaVideo) {
-    return this.http.post(`${environment.baseUrl}/media`, mediaVideo);
+  create(video: Video) {
+    return this.http.post(`${environment.baseUrl}/video`, video);
   }
 
   getAll() {
-    return this.http.get(`${environment.baseUrl}/media`);
+    return this.http.get(`${environment.baseUrl}/video`);
   }
 
   read() {
-    return this.http.get(`${environment.baseUrl}/media`);
+    return this.http.get(`${environment.baseUrl}/video`);
   }
 
   readById(id: number) {
-    const url = `${environment.baseUrl}/media/${id}`;
-    return this.http.get<MediaVideo>(url);
+    const url = `${environment.baseUrl}/video/${id}`;
+    return this.http.get<Video>(url);
   }
 
-  update(mediaVideo: MediaVideo): Observable<MediaVideo> {
-    const url = `${environment.baseUrl}/media/${mediaVideo.id}`;
-    return this.http.put<MediaVideo>(url, mediaVideo);
+  update(video: Video): Observable<Video> {
+    const url = `${environment.baseUrl}/video/${video.id}`;
+    return this.http.put<Video>(url, video);
   }
 
   delete(id: number) {
-    const url = `${environment.baseUrl}/media/${id}`;
+    const url = `${environment.baseUrl}/video/${id}`;
     return this.http.delete(url);
   }
 
