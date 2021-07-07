@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 
 import { Router } from '@angular/router';
-import { Blog } from 'src/app/models/blog.model';
+import { Blog, BlogForm } from 'src/app/models/blog.model';
 import { BlogService } from 'src/app/services/blog.service';
 
 @Component({
@@ -10,7 +10,7 @@ import { BlogService } from 'src/app/services/blog.service';
   styleUrls: ['./blog-create.component.scss'],
 })
 export class BlogCreateComponent {
-  blog: Blog = new Blog();
+  blog: BlogForm = new BlogForm();
 
   config = {
     height: 500,
@@ -70,8 +70,21 @@ export class BlogCreateComponent {
 
   constructor(private blogService: BlogService, private router: Router) { }
 
+  addFile(ev: any) {
+    console.log(ev.target.files)
+    this.blog.photograph = ev.target.files[0];
+  }
+
   createBlog(): void {
-    this.blogService.create(this.blog).subscribe(() => {
+
+    const formData = new FormData();
+    formData.append('title', this.blog.title);
+    formData.append('description', this.blog.description);
+    formData.append('content', this.blog.content);
+
+    formData.append('photograph', this.blog.photograph, this.blog.photograph.name);
+
+    this.blogService.create(formData).subscribe(() => {
       this.blogService.showMessage('Blog cadastrado!');
       this.router.navigate(['admin/blog']);
     });

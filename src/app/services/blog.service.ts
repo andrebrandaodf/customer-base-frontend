@@ -10,7 +10,7 @@ import { Blog } from '../models/blog.model';
   providedIn: 'root',
 })
 export class BlogService {
-  constructor(private snackBar: MatSnackBar, private http: HttpClient) {}
+  constructor(private snackBar: MatSnackBar, private http: HttpClient) { }
 
   showMessage(msg: string, isError: boolean = false): void {
     this.snackBar.open(msg, 'x', {
@@ -21,7 +21,7 @@ export class BlogService {
     });
   }
 
-  create(blog: Blog) {
+  create(blog: FormData) {
     return this.http.post(`${environment.baseUrl}/blog`, blog);
   }
 

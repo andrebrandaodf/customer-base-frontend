@@ -1,6 +1,15 @@
 export class Blog {
-  id?: number;
+  id!: number;
   title!: string;
   description!: string;
-  urlImage!: string;
+  photograph!: string;
+  content!: string;
+}
+
+export class BlogForm {
+  id!: number;
+  title!: string;
+  description!: string;
+  photograph!: File;
+  content!: string;
 }

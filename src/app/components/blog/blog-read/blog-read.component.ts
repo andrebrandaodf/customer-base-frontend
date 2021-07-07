@@ -10,7 +10,7 @@ import { BlogService } from 'src/app/services/blog.service';
 })
 export class BlogReadComponent implements OnInit {
   blog!: Blog[];
-  displayedColumns = ['id', 'title', 'description', 'urlImage', 'action'];
+  displayedColumns = ['id', 'title', 'description', 'action'];
 
   constructor(private blogService: BlogService) { }
 

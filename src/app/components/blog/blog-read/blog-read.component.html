@@ -21,14 +21,6 @@
         </td>
       </ng-container>
 
-      <!--  Url image Column -->
-      <ng-container matColumnDef="urlImage">
-        <th mat-header-cell *matHeaderCellDef>url Imagem</th>
-        <td mat-cell *matCellDef="let row" target="blank">
-          <a [href]="row.urlImage" target="blank">{{ row.urlImage }}</a>
-        </td>
-      </ng-container>
-
       <!-- Action Column -->
       <ng-container matColumnDef="action">
         <th mat-header-cell *matHeaderCellDef>Ações</th>

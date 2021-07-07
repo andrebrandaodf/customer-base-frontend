@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 
 import { Router, ActivatedRoute } from '@angular/router';
-import { Blog } from 'src/app/models/blog.model';
+import { BlogForm } from 'src/app/models/blog.model';
 import { BlogService } from 'src/app/services/blog.service';
 
 @Component({
@@ -10,8 +10,9 @@ import { BlogService } from 'src/app/services/blog.service';
   styleUrls: ['./blog-update.component.scss'],
 })
 export class BlogUpdateComponent implements OnInit {
-  blog: Blog = new Blog();
-  private id?: number;
+  [x: string]: any;
+  blog: BlogForm = new BlogForm();
+  private id!: number;
 
   constructor(
     private blogService: BlogService,
@@ -34,8 +35,17 @@ export class BlogUpdateComponent implements OnInit {
   }
 
   updateBlog(): void {
-    console.log(this.blog);
-    this.blogService.update(this.blog).subscribe(() => {
+
+    const formData = new FormData();
+    formData.append('id', this.blog.id.toString());
+    formData.append('title', this.blog.title);
+    formData.append('description', this.blog.description);
+    formData.append('content', this.blog.content);
+
+    formData.append('photograph', this.blog.photograph, this.blog.photograph.name);
+
+    console.log(this.formData);
+    this.blogService.update(this.formData).subscribe(() => {
       this.blogService.showMessage('Blog atualizado com sucesso!');
       this.router.navigate(['admin/blog']);
     });
