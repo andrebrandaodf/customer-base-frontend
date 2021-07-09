@@ -38,8 +38,8 @@ export class BlogService {
     return this.http.get<Blog>(url);
   }
 
-  update(blog: Blog) {
-    const url = `${environment.baseUrl}/blog/${blog.id}`;
+  update(blog: FormData) {
+    const url = `${environment.baseUrl}/blog`;
     return this.http.put<Blog>(url, blog).pipe(
       map((obj) => obj),
       catchError((e) => this.errorHandler(e))
@@ -58,9 +58,6 @@ export class BlogService {
 
   uploadFile(url: FormData) {
     return this.http.post(`${environment.baseUrl}/storage/uploadFile`, url);
-    // const file = ev.target.files[0];
 
-    // const formData = new FormData();
-    // const request = new HttpRequest('POST', url, formData);
   }
 }

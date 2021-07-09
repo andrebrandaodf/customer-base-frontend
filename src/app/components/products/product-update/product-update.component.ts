@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
-import { Product } from 'src/app/models/product.model';
+import { ProductForm } from 'src/app/models/product.model';
 import { ProductService } from 'src/app/services/product.service';
 
 
@@ -10,7 +10,7 @@ import { ProductService } from 'src/app/services/product.service';
   styleUrls: ['./product-update.component.scss'],
 })
 export class ProductUpdateComponent implements OnInit {
-  product: Product = new Product();
+  product: ProductForm = new ProductForm();
   private id?: number;
 
   constructor(
@@ -34,8 +34,16 @@ export class ProductUpdateComponent implements OnInit {
   }
 
   updateProduct(): void {
+    const formData = new FormData();
+    console.log(formData)
+    formData.append('id', this.product.id.toString());
+    formData.append('name', this.product.name);
+    formData.append('presentation', this.product.presentation);
+    formData.append('manufacturer', this.product.manufacturer);
+    formData.append('recordNumber', this.product.recordNumber);
+
     console.log(this.product);
-    this.productService.update(this.product).subscribe(() => {
+    this.productService.update(formData).subscribe(() => {
       this.productService.showMessage('Produto atualizado com sucesso!');
       this.router.navigate(['admin/product']);
     });

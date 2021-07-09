@@ -38,8 +38,8 @@ export class ProductService {
     return this.http.get<Product>(url);
   }
 
-  update(product: Product) {
-    const url = `${environment.baseUrl}/product/${product.id}`;
+  update(product: FormData) {
+    const url = `${environment.baseUrl}/product`;
     return this.http.put<Product>(url, product).pipe(
       map((obj) => obj),
       catchError((e) => this.errorHandler(e))

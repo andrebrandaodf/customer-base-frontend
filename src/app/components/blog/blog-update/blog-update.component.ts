@@ -47,10 +47,10 @@ export class BlogUpdateComponent implements OnInit {
     formData.append('description', this.blog.description);
     formData.append('content', this.blog.content);
 
-    formData.append('photograph', this.blog.photograph, this.blog.photograph.name);
+    // formData.append('photograph', this.blog.photograph, this.blog.photograph.name);
 
     console.log(this.formData);
-    this.blogService.update(this.formData).subscribe(() => {
+    this.blogService.update(formData).subscribe(() => {
       this.blogService.showMessage('Blog atualizado com sucesso!');
       this.router.navigate(['admin/blog']);
     });
