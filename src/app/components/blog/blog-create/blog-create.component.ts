@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 
 import { Router } from '@angular/router';
-import { Blog, BlogForm } from 'src/app/models/blog.model';
+import { BlogForm } from 'src/app/models/blog.model';
 import { BlogService } from 'src/app/services/blog.service';
 
 @Component({

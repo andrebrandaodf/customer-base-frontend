@@ -10,7 +10,7 @@ import { Product } from './../models/product.model';
   providedIn: 'root',
 })
 export class ProductService {
-  constructor(private snackBar: MatSnackBar, private http: HttpClient) {}
+  constructor(private snackBar: MatSnackBar, private http: HttpClient) { }
 
   showMessage(msg: string, isError: boolean = false): void {
     this.snackBar.open(msg, 'x', {
@@ -21,7 +21,7 @@ export class ProductService {
     });
   }
 
-  create(product: Product) {
+  create(product: FormData) {
     return this.http.post(`${environment.baseUrl}/product`, product);
   }
 

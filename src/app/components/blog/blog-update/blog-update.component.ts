@@ -34,6 +34,11 @@ export class BlogUpdateComponent implements OnInit {
     );
   }
 
+  addFile(ev: any) {
+    console.log(ev.target.files)
+    this.blog.photograph = ev.target.files[0];
+  }
+
   updateBlog(): void {
 
     const formData = new FormData();
@@ -54,4 +59,6 @@ export class BlogUpdateComponent implements OnInit {
   cancel(): void {
     this.router.navigate(['admin/blog']);
   }
+
+
 }

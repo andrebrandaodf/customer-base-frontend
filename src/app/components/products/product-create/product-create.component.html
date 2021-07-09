@@ -10,22 +10,27 @@
           <input matInput placeholder="Apresentação" [(ngModel)]="product.presentation" name="presentation" />
         </mat-form-field>
         <mat-form-field>
-          <input matInput placeholder="Número do Registro" [(ngModel)]="product.recordNumber" name="recordNumber" />
-        </mat-form-field>
-        <mat-form-field>
           <input matInput placeholder="Fabricante" [(ngModel)]="product.manufacturer" name="manufacturer" />
         </mat-form-field>
         <mat-form-field>
-          <input matInput placeholder="Bula do Profissional da Saúde" [(ngModel)]="product.bullProfessionalHealth"
-            name="bullProfessionalHealth" />
+          <input matInput placeholder="Número do Registro" [(ngModel)]="product.recordNumber" name="recordNumber" />
         </mat-form-field>
-        <mat-form-field>
-          <input matInput placeholder="Bula do Paciente" [(ngModel)]="product.bullPatient" name="bullPatient" />
-        </mat-form-field>
-        <mat-form-field>
-          <input matInput placeholder="Ficha Técnica do Produto" [(ngModel)]="product.tokenTechniqueProduct"
-            name="tokenTechniqueProduct" />
-        </mat-form-field>
+        <label for="formFile" class="form-label">Bula do profissional da saúde</label>
+        <div class="input-group mb-3">
+
+          <input type="file" accept=".pdf" (change)="addFile($event)" [multiple]=false class="form-control"
+            id="bullProfessionalHealth">
+        </div>
+        <label for="formFile" class="form-label">Bula do paciente</label>
+        <div class="input-group mb-3">
+          <input type="file" accept=".pdf" (change)="addFile($event)" [multiple]=false class="form-control"
+            id="bullPatient">
+        </div>
+        <label for="formFile" class="form-label">Ficha técnica do produto</label>
+        <div class="input-group mb-3">
+          <input type="file" accept=".xls,.xlsx" (change)="addFile($event)" [multiple]=false class="form-control"
+            id="tokenTechniqueProduct">
+        </div>
       </form>
     </mat-card>
   </div>
