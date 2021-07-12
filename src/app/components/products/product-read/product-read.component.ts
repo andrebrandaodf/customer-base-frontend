@@ -14,7 +14,6 @@ export class ProductReadComponent implements OnInit {
 
   product: Product[] = [];
   displayedColumns = [
-    'id',
     'name',
     'presentation',
     'recordNumber',

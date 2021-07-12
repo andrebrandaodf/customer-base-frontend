@@ -12,7 +12,6 @@ import { User } from '../../models/user.model';
 export class LoginComponent implements OnInit {
   hide = true;
   user: User = new User();
-  // showSpinner = false;
 
   constructor(private formBuilder: FormBuilder, private authService: AuthService, private router: Router) { }
 
@@ -39,14 +38,4 @@ export class LoginComponent implements OnInit {
       }
     )
   }
-
-  // spinner() {
-  //   setTimeout(() => {
-  //     this.windowWidth = "-" + window.innerWidth + "px";
-
-  //     setTimeout(() => {
-  //       this.showSplash = !this.showSplash;
-  //     }, 500);
-  //   }, 3000);
-  // }
 }

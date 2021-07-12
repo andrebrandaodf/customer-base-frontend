@@ -1,3 +1,4 @@
+@media screen and (min-width: 992px) {
 .sidenav-container {
     height: 100%;
   }
@@ -20,5 +21,30 @@
   .mat-list-item{
     color: #25aa76;
   }
+} 
+
+@media screen and (max-width: 992px) {
+  .sidenav-container {
+      height: 100%;
+    }
+    
+    .sidenav {
+      width: 200px;
+    }
+    
+    .sidenav .mat-toolbar {
+      background: inherit;
+      color: #25aa76;
+    }
+    
+    .mat-toolbar.mat-primary {
+      position: sticky;
+      top: 0;
+      z-index: 1;
+    }
   
+    .mat-list-item{
+      color: #25aa76;
+    }
+  } 
   

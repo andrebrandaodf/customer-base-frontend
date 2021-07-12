@@ -10,7 +10,7 @@ import { VideoService } from 'src/app/services/video.service';
 })
 export class VideoReadComponent implements OnInit {
   video!: Video[];
-  displayedColumns = ['id', 'title', 'description', 'urlVideo', 'action'];
+  displayedColumns = ['title', 'description', 'urlVideo', 'action'];
 
   constructor(private videoService: VideoService) { }
 

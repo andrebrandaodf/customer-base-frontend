@@ -1,3 +1,5 @@
+@media screen and (min-width: 992px) {
+
 table {
   width: 100%;
 }
@@ -19,3 +21,29 @@ table {
   border-top: 0.5rem solid transparent;
   cursor: pointer;
 }
+}
+@media screen and (max-width: 992px) {
+
+  table {
+    width: 100%;
+  }
+  
+  .edit {
+    margin-right: 10px;
+  }
+  
+  .edit > em {
+    color: #25aa76;
+  }
+  
+  .delete > em {
+    color: #e35e6b;
+  }
+  
+  .mat-row .mat-cell {
+    border-bottom: 0.5rem solid transparent;
+    border-top: 0.5rem solid transparent;
+    cursor: pointer;
+  }
+  }
+  
