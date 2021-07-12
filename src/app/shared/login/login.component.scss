@@ -20,13 +20,10 @@
       min-height: 100vh;
     }
 
-  // .loader-container{
-  //   position: absolute;
-  //   height: 100%;
-  //   width: 100%;
-  //   background: #25aa76;
-  //   opacity:0.8 ;
-  //   z-index: 99;
-  // }    
-
-  
+  button{
+      margin-bottom: 0;
+      margin-left: 6rem;
+    }
+  mat-card-actions{
+      margin-left: 6rem;
+  }
