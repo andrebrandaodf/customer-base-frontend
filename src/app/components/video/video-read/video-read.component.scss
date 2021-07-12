@@ -1,11 +1,24 @@
+.scroll-read{
+  max-width: 100%;
+  overflow: auto;
+}
+// ::ng-deep .no-border{
+//   border: unset;
+// }
+
 @media screen and (min-width: 992px) {
 
 table {
   width: 100%;
+  // .inline{
+  //   display: inline-flex;
+  // }   
 }
+
 
 .edit {
   margin-right: 10px;
+ 
 }
 
 .edit > em {
@@ -21,11 +34,16 @@ table {
   border-top: 0.5rem solid transparent;
   cursor: pointer;
 }
+
+
 }
 @media screen and (max-width: 992px) {
 
   table {
     width: 100%;
+    // .inline{
+    //   display: inline-flex;
+    // }  
   }
   
   .edit {
