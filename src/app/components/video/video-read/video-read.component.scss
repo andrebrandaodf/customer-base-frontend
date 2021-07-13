@@ -2,6 +2,13 @@
   max-width: 100%;
   overflow: auto;
 }
+
+.btn-detail {
+  margin: 0;
+  padding: 0;
+  width: auto;
+}
+
 // ::ng-deep .no-border{
 //   border: unset;
 // }
@@ -10,9 +17,9 @@
 
 table {
   width: 100%;
-  // .inline{
-  //   display: inline-flex;
-  // }   
+  .inline{
+    display: inline-flex;
+  }   
 }
 
 
