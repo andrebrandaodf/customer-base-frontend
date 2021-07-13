@@ -1,24 +1,35 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
-import { Blog } from 'src/app/models/blog.model';
 import { BlogService } from 'src/app/services/blog.service';
 import { MatPaginator } from '@angular/material/paginator';
 import { MatTableDataSource } from '@angular/material/table';
-
+import { animate, state, style, transition, trigger } from '@angular/animations';
 
 @Component({
   selector: 'app-blog-read',
   templateUrl: './blog-read.component.html',
   styleUrls: ['./blog-read.component.scss'],
+  animations: [
+    trigger('detailExpand', [
+      state('collapsed', style({ height: '0px', minHeight: '0' })),
+      state('expanded', style({ height: '*' })),
+      transition('expanded <=> collapsed', animate('225ms cubic-bezier(0.4, 0.0, 0.2, 1)')),
+    ]),
+  ],
 })
 export class BlogReadComponent implements OnInit {
-  // blog!: Blog[];
   @ViewChild(MatPaginator) paginator!: MatPaginator;
+
   isLoading: boolean = true;
 
-  displayedColumns = ['title', 'description', 'action'];
+  dataSource: any;
 
-  dataSource!: MatTableDataSource<any>;
+  expandedElement: any | null;
 
+  columnsToDisplay = [
+    'title',
+    'description',
+    'action',
+  ];
   constructor(private blogService: BlogService) {
     this.dataSource = new MatTableDataSource();
   }

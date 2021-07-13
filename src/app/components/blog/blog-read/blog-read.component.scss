@@ -1,57 +1,82 @@
-.scroll-read{
+.scroll-read {
   max-width: 100%;
   overflow: auto;
 }
-.btn-detail {
-  margin: 0;
-  padding: 0;
-  width: auto;
-}
 
-@media screen and (min-width: 992px) {
 table {
   width: 100%;
 }
 
-.edit {
-  margin-right: 10px;
+tr.example-detail-row {
+  height: 0;
 }
 
-.edit > em {
-  color: #25aa76;
+tr.example-element-row:not(.example-expanded-row):hover {
+  background: whitesmoke;
 }
 
-.delete > em {
-  color: #e35e6b;
+tr.example-element-row:not(.example-expanded-row):active {
+  background: #efefef;
 }
 
-.mat-row .mat-cell {
-  border-bottom: 0.5rem solid transparent;
-  border-top: 0.5rem solid transparent;
+.example-element-row td {
+  border-bottom-width: 0;
   cursor: pointer;
 }
+
+.example-element-detail {
+  overflow: hidden;
+  display: flex;
 }
 
-@media screen and (max-width: 992px)  {
-  table {
-    width: 100%;
+.example-element-diagram {
+  min-width: 80px;
+  border: 2px solid black;
+  padding: 8px;
+  font-weight: lighter;
+  margin: 8px 0;
+  height: 104px;
+}
+
+.example-element-symbol {
+  font-weight: bold;
+  font-size: 40px;
+  line-height: normal;
+}
+
+.example-element-description {
+  padding: 16px;
+}
+
+.example-element-description-attribution {
+  opacity: 0.5;
+}
+
+.btn-edit {
+  padding: 0;
+  border: 2px solid #25aa76;
+  color: #25aa76;
+  display: flex;
+  justify-content: center;
+  padding: 4px;
+
+  &:hover {
+      color: #fff;
+      background-color: #25aa76;
   }
-  
-  .edit {
-    margin-right: 10px;
+}
+
+.btn-delete {
+  padding: 0;
+  border: 2px solid #c81d25;
+  margin: 8px;
+  color: #c81d25;
+  display: flex;
+  justify-content: center;
+  padding: 4px;
+
+  &:hover {
+      color: #fff;
+      background-color: #c81d25;
   }
-  
-  .edit > em {
-    color: #25aa76;
-  }
-  
-  .delete > em {
-    color: #e35e6b;
-  }
-  
-  .mat-row .mat-cell {
-    border-bottom: 0.5rem solid transparent;
-    border-top: 0.5rem solid transparent;
-    cursor: pointer;
-  }
-  }
+}

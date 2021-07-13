@@ -1,14 +1,20 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
-import { Video } from 'src/app/models/video.model';
 import { VideoService } from 'src/app/services/video.service';
 import { MatTableDataSource } from '@angular/material/table';
 import { MatPaginator } from '@angular/material/paginator';
-
+import { animate, state, style, transition, trigger } from '@angular/animations';
 
 @Component({
   selector: 'app-video-read',
   templateUrl: './video-read.component.html',
   styleUrls: ['./video-read.component.scss'],
+  animations: [
+    trigger('detailExpand', [
+      state('collapsed', style({ height: '0px', minHeight: '0' })),
+      state('expanded', style({ height: '*' })),
+      transition('expanded <=> collapsed', animate('225ms cubic-bezier(0.4, 0.0, 0.2, 1)')),
+    ]),
+  ],
 })
 export class VideoReadComponent implements OnInit {
   @ViewChild(MatPaginator) paginator!: MatPaginator;
@@ -16,7 +22,14 @@ export class VideoReadComponent implements OnInit {
 
   dataSource!: MatTableDataSource<any>;
 
-  displayedColumns = ['title', 'description', 'urlVideo', 'action'];
+  expandedElement: any | null;
+
+  columnsToDisplay = [
+    'title',
+    'description',
+    'urlVideo',
+    'action',
+  ];
 
   constructor(private videoService: VideoService) {
     this.dataSource = new MatTableDataSource();
