@@ -4,21 +4,33 @@
       <div class="card">
         <div class="card-body">
           <h1 class="title-matCard">Blog Hipolabor</h1>
-          <div class="input-group mb-3">
-            <span class="input-group-text" id="basic-addon1"><i class="fas fa-heading"></i></span>
-            <input type="text" class="form-control" placeholder="Título" aria-label="title" [(ngModel)]="blog.title"
-              aria-describedby="basic-addon1" />
-          </div>
-          <div class="input-group mb-3">
-            <span class="input-group-text" id="basic-addon1"><i class="far fa-comment-alt"></i></span>
-            <input type="text" class="form-control" placeholder="Descrição" aria-label="description"
-              [(ngModel)]="blog.description" aria-describedby="basic-addon1" />
-          </div>
-          <div class="input-group mb-3">
-            <!-- <label class="input-group-text" for="photograph"></label> -->
-            <input type="file" accept="image/*" (change)="addFile($event)" [multiple]=false class="form-control"
-              id="photograph">
-          </div>
+          <form [formGroup]="form" class="d-flex ng-untouched ng-pristine ng-valid">
+            <!-- <div class="input-group mb-3"> -->
+            <mat-form-field>
+              <!-- <span class="input-group-text" id="basic-addon1"><i class="fas fa-heading"></i></span> -->
+              <input matInput placeholder="Título" [(ngModel)]="blog.title" formControlName="title" name="title" />
+              <mat-error *ngIf="form.controls.title.invalid && form.controls.title.touched">
+                <span *ngIf="form.controls.title.errors?.required">Campo obrigatório</span>
+              </mat-error>
+            </mat-form-field>
+            <!-- </div> -->
+            <!-- <div class="input-group mb-3"> -->
+            <!-- <span class="input-group-text" id="basic-addon1"><i class="far fa-comment-alt"></i></span> -->
+            <mat-form-field>
+              <input matInput placeholder="Descrição" [(ngModel)]="blog.description" formControlName="description"
+                name="description" />
+              <mat-error *ngIf="form.controls.description.invalid && form.controls.description.touched">
+                <span *ngIf="form.controls.description.errors?.required">Campo obrigatório</span>
+              </mat-error>
+            </mat-form-field>
+            <!-- </div> -->
+
+            <div class="input-group mb-3">
+              <!-- <label class="input-group-text" for="photograph"></label> -->
+              <input type="file" accept="image/*" (change)="addFile($event)" [multiple]=false class="form-control"
+                id="photograph">
+            </div>
+          </form>
           <editor [init]="config" [(ngModel)]="blog.content"> </editor>
         </div>
       </div>

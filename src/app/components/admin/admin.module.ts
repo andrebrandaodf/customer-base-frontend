@@ -40,6 +40,7 @@ import { VideoCreateComponent } from '../video/video-create/video-create.compone
 import { VideoDeleteComponent } from '../video/video-delete/video-delete.component';
 import { VideoReadComponent } from '../video/video-read/video-read.component';
 import { VideoUpdateComponent } from '../video/video-update/video-update.component';
+import { NgxMatFileInputModule } from '@angular-material-components/file-input';
 
 @NgModule({
   declarations: [
@@ -83,6 +84,7 @@ import { VideoUpdateComponent } from '../video/video-update/video-update.compone
     MatIconModule,
     ReactiveFormsModule,
     EditorModule,
+    NgxMatFileInputModule
   ],
   providers: [MatSidenavContainer],
 })
