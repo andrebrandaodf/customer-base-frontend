@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { ProductForm } from 'src/app/models/product.model';
 import { ProductService } from 'src/app/services/product.service';
+import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 
 @Component({
   selector: 'app-product',
@@ -11,7 +12,17 @@ import { ProductService } from 'src/app/services/product.service';
 export class ProductCreateComponent {
   product: ProductForm = new ProductForm();
 
-  constructor(private productService: ProductService, private router: Router) { }
+  constructor(private formBuilder: FormBuilder, private productService: ProductService, private router: Router) { }
+
+  form: FormGroup = this.formBuilder.group({
+    name: [null, [Validators.required]],
+    presentation: [null, [Validators.required]],
+    manufacturer: [null, [Validators.required]],
+    recordNumber: [null, [Validators.required]],
+    bullProfessionalHealth: [null, [Validators.required]],
+    bullPatient: [null, [Validators.required]],
+    tokenTechiqueProduct: [null, [Validators.required]],
+  })
 
   addFile(ev: any) {
     console.log(ev.target.files)

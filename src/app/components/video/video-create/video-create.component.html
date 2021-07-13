@@ -7,7 +7,8 @@
           <input matInput placeholder="Título" [(ngModel)]="video.title" name="title" />
         </mat-form-field>
         <mat-form-field>
-          <input matInput placeholder="Descrição" [(ngModel)]="video.description" name="description" />
+          <textarea type="text" maxlength="350" matInput placeholder="Descrição" [(ngModel)]="video.description"
+            name="description"></textarea>
         </mat-form-field>
         <mat-form-field>
           <input matInput placeholder="URL Vídeo" [(ngModel)]="video.urlVideo" name="url" />

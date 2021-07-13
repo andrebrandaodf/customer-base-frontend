@@ -7,7 +7,8 @@
           <input matInput placeholder="Nome" [(ngModel)]="product.name" name="name" />
         </mat-form-field>
         <mat-form-field>
-          <input matInput placeholder="Apresentação" [(ngModel)]="product.presentation" name="presentation" />
+          <textarea type="text" maxlength="800" matInput placeholder="Apresentação" [(ngModel)]="product.presentation"
+            name="presentation"></textarea>
         </mat-form-field>
         <mat-form-field>
           <input matInput placeholder="Fabricante" [(ngModel)]="product.manufacturer" name="manufacturer" />

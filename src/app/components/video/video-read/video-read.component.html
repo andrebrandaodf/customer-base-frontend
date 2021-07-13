@@ -1,7 +1,7 @@
 <div class="container-fluid">
   <div class="m-3">
     <mat-form-field class="w-100">
-      <mat-label>Buscar</mat-label>
+      <mat-label>Pesquisar</mat-label>
       <input matInput (keyup)="applyFilter($event)" #input>
     </mat-form-field>
     <div class="mat-elevation-z2 scroll-read">
@@ -20,7 +20,7 @@
 
         <!-- Url Column -->
         <ng-container matColumnDef="urlVideo">
-          <th mat-header-cell *matHeaderCellDef>Url Vídeo</th>
+          <th mat-header-cell *matHeaderCellDef> Vídeo</th>
           <td mat-cell *matCellDef="let row">
             <a [href]="row.urlVideo" target="blank">{{ row.urlVideo }}</a>
           </td>
@@ -33,28 +33,20 @@
             <button type="button"
               class="btn v-btn v-btn--outline v-btn--depressed v-btn--small theme--light primary--text">
               <div class="v-btn__content">
-                <i aria-hidden="true" class="v-icon material-icons theme--light" style="font-size: 25px;"
+                <i aria-hidden="true" class="v-icon material-icons theme--light"
                   [routerLink]="['update', row.id]">edit</i>
               </div>
             </button>
 
-            <!-- <a [routerLink]="['update', row.id]" class="edit">
-              <em><i class="material-icons"> edit </i></em>
-            </a> -->
             <button type="button"
               class="btn v-btn v-btn--outline v-btn--depressed v-btn--small theme--light secondary--text">
-              <div class="v-btn__content"><i aria-hidden="true" class="v-icon material-icons theme--light"
-                  style="font-size: 25px;" [routerLink]="['delete', row.id]">delete</i></div>
+              <div class="v-btn__content">
+                <i aria-hidden="true" class="v-icon material-icons theme--light"
+                  [routerLink]="['delete', row.id]">delete</i>
+              </div>
             </button>
 
-            <!-- <a [routerLink]="['delete', row.id]" class="delete">
-              <em> <i class="material-icons"> delete </i></em>
-            </a> -->
           </td>
-
-
-          <!-- <td class="justify-center px-0" style="text-align: center;"> -->
-
         </ng-container>
         <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
         <tr mat-row *matRowDef="let row; columns: displayedColumns"></tr>

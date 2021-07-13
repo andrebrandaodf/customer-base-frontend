@@ -3,19 +3,30 @@
   overflow: auto;
 }
 
-// .btn-detail {
-//   margin: 0;
-//   padding: 0;
-//   width: auto;
-// }
+a{
+  text-decoration: none;
+}
 
-// // ::ng-deep .no-border{
-// //   border: unset;
-// // }
+td {
+  vertical-align: middle;
+}
+th {
+  text-align: end;
+  vertical-align: middle;
+  
+}
 
 .primary--text {
   color: #25aa76 !important;
   caret-color: #25aa76 !important;
+  font-size: 16px;
+  justify-content: center !important;
+}
+
+.secondary--text{
+  color: #e35e6b !important;
+  caret-color: #e35e6b !important;
+  font-size: 16px;
 }
 
 .btn {
@@ -26,6 +37,11 @@
 }
 .v-btn {
   padding: 0 16px;
+}
+
+.v-btn__content {
+  justify-content: center;
+  width: inherit;
 }
 
 .v-btn.v-btn--outline, .v-btn.v-btn--outline:hover {
@@ -49,6 +65,7 @@
 .theme--light.v-btn {
   color: rgba(0,0,0,.87);
 }
+
 
 
 // @media screen and (min-width: 992px) {
