@@ -3,72 +3,103 @@
   overflow: auto;
 }
 
-.btn-detail {
-  margin: 0;
-  padding: 0;
-  width: auto;
-}
-
-// ::ng-deep .no-border{
-//   border: unset;
+// .btn-detail {
+//   margin: 0;
+//   padding: 0;
+//   width: auto;
 // }
 
-@media screen and (min-width: 992px) {
+// // ::ng-deep .no-border{
+// //   border: unset;
+// // }
 
-table {
-  width: 100%;
-  .inline{
-    display: inline-flex;
-  }   
+.primary--text {
+  color: #25aa76 !important;
+  caret-color: #25aa76 !important;
+}
+
+.btn {
+  width: 30px;
+  min-width: 30px;
+  -webkit-transition: width .5s!important;
+  transition: width .5s!important;
+}
+.v-btn {
+  padding: 0 16px;
+}
+
+.v-btn.v-btn--outline, .v-btn.v-btn--outline:hover {
+  -webkit-box-shadow: none;
+  box-shadow: none;
+}
+.v-btn.v-btn--outline {
+  border: 1px solid currentColor;
+  background: transparent!important;
+}
+.v-btn--small {
+  font-size: 13px;
+  height: 28px;
+  padding: 0 8px;
+}
+
+.theme--light.v-btn:not(.v-btn--icon):not(.v-btn--flat) {
+  background-color: #f5f5f5;
+}
+
+.theme--light.v-btn {
+  color: rgba(0,0,0,.87);
 }
 
 
-.edit {
-  margin-right: 10px;
+// @media screen and (min-width: 992px) {
+
+// table {
+//   width: 100%;
+  
+// }
+
+// .edit {
+//   margin-right: 10px;
  
-}
+// }
 
-.edit > em {
-  color: #25aa76;
-}
+// .edit > em {
+//   color: #25aa76;
+// }
 
-.delete > em {
-  color: #e35e6b;
-}
+// .delete > em {
+//   color: #e35e6b;
+// }
 
-.mat-row .mat-cell {
-  border-bottom: 0.5rem solid transparent;
-  border-top: 0.5rem solid transparent;
-  cursor: pointer;
-}
+// .mat-row .mat-cell {
+//   border-bottom: 0.5rem solid transparent;
+//   border-top: 0.5rem solid transparent;
+//   cursor: pointer;
+// }
 
+// }
+// @media screen and (max-width: 992px) {
 
-}
-@media screen and (max-width: 992px) {
-
-  table {
-    width: 100%;
-    // .inline{
-    //   display: inline-flex;
-    // }  
-  }
+//   table {
+//     width: 100%;
+//   }
   
-  .edit {
-    margin-right: 10px;
-  }
+//   .edit {
+//     margin-right: 10px;
+//   }
   
-  .edit > em {
-    color: #25aa76;
-  }
+//   .edit > em {
+//     color: #25aa76;
+//   }
   
-  .delete > em {
-    color: #e35e6b;
-  }
+//   .delete > em {
+//     color: #e35e6b;
+//   }
   
-  .mat-row .mat-cell {
-    border-bottom: 0.5rem solid transparent;
-    border-top: 0.5rem solid transparent;
-    cursor: pointer;
-  }
-  }
+//   .mat-row .mat-cell {
+//     border-bottom: 0.5rem solid transparent;
+//     border-top: 0.5rem solid transparent;
+//     cursor: pointer;
+//   }
+//   }
   

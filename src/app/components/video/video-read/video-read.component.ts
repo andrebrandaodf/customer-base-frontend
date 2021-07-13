@@ -11,7 +11,6 @@ import { MatPaginator } from '@angular/material/paginator';
   styleUrls: ['./video-read.component.scss'],
 })
 export class VideoReadComponent implements OnInit {
-  // video!: Video[];
   @ViewChild(MatPaginator) paginator!: MatPaginator;
   isLoading: boolean = true;
 
