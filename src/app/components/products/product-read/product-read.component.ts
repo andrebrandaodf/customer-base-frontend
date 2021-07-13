@@ -1,25 +1,34 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
-
 import { MatPaginator } from '@angular/material/paginator';
-import { Product } from 'src/app/models/product.model';
 import { ProductService } from 'src/app/services/product.service';
 import { MatTableDataSource } from '@angular/material/table';
-
+import { animate, state, style, transition, trigger } from '@angular/animations';
 
 @Component({
   selector: 'app-product-read',
   templateUrl: './product-read.component.html',
   styleUrls: ['./product-read.component.scss'],
+  animations: [
+    trigger('detailExpand', [
+      state('collapsed', style({ height: '0px', minHeight: '0' })),
+      state('expanded', style({ height: '*' })),
+      transition('expanded <=> collapsed', animate('225ms cubic-bezier(0.4, 0.0, 0.2, 1)')),
+    ]),
+  ],
 })
+
 export class ProductReadComponent implements OnInit {
+
   @ViewChild(MatPaginator) paginator!: MatPaginator;
+
   isLoading: boolean = true;
 
-  dataSource!: MatTableDataSource<any>;
+  dataSource: any;
 
-  displayedColumns = [
+  expandedElement: any | null;
+
+  columnsToDisplay = [
     'name',
-    'presentation',
     'recordNumber',
     'manufacturer',
     'action',
@@ -54,12 +63,4 @@ export class ProductReadComponent implements OnInit {
       this.isLoading = false;
     })
   }
-}
-
-
-export interface PeriodicElement {
-  name: string;
-  position: number;
-  weight: number;
-  symbol: string;
 }
