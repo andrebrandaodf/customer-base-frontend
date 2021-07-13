@@ -26,7 +26,6 @@ export class VideoReadComponent implements OnInit {
 
   columnsToDisplay = [
     'title',
-    'description',
     'urlVideo',
     'action',
   ];

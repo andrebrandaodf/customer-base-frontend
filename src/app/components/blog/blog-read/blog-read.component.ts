@@ -27,7 +27,6 @@ export class BlogReadComponent implements OnInit {
 
   columnsToDisplay = [
     'title',
-    'description',
     'action',
   ];
   constructor(private blogService: BlogService) {
