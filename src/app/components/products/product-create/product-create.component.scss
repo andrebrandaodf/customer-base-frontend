@@ -38,3 +38,9 @@
       background-color: #fff;
     }
   }
+
+  .form-group.required:not(.checkbox) .control-label:after, 
+  .form-group.required .text:after { /* change .text in whatever class of the text after the checkbox has */
+     content:"*";
+     color:red;
+  }

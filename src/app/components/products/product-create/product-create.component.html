@@ -2,32 +2,46 @@
   <div class="mat-elevation-z2">
     <mat-card class="novoProduto">
       <mat-card-title class="title-matCard">Novo Produto</mat-card-title>
-      <form class="d-flex ng-untouched ng-pristine ng-valid">
+      <form [formGroup]="form" class="d-flex ng-untouched ng-pristine ng-valid">
         <mat-form-field>
-          <input matInput placeholder="Nome do Produto" [(ngModel)]="product.name" name="name" />
+          <input matInput placeholder="Nome do Produto" [(ngModel)]="product.name" formControlName="name" name="name" />
+          <mat-error *ngIf="form.controls.name.invalid && form.controls.name.touched">
+            <span *ngIf="form.controls.name.errors?.required">Campo obrigatório</span>
+          </mat-error>
         </mat-form-field>
         <mat-form-field>
           <textarea type="text" maxlength="800" matInput placeholder="Apresentação" [(ngModel)]="product.presentation"
-            name="presentation"></textarea>
+            formControlName="presentation" name="presentation"></textarea>
+          <mat-error *ngIf="form.controls.presentation.invalid && form.controls.name.touched">
+            <span *ngIf="form.controls.presentation.errors?.required">Campo obrigatório</span>
+          </mat-error>
         </mat-form-field>
         <mat-form-field>
-          <input matInput placeholder="Fabricante" [(ngModel)]="product.manufacturer" name="manufacturer" />
+          <input matInput placeholder="Fabricante" [(ngModel)]="product.manufacturer" formControlName="manufacturer"
+            name="manufacturer" />
+          <mat-error *ngIf="form.controls.manufacturer.invalid && form.controls.manufacturer.touched">
+            <span *ngIf="form.controls.manufacturer.errors?.required">Campo obrigatório</span>
+          </mat-error>
         </mat-form-field>
         <mat-form-field>
-          <input matInput placeholder="Número do Registro" [(ngModel)]="product.recordNumber" name="recordNumber" />
+          <input matInput placeholder="Número do Registro" [(ngModel)]="product.recordNumber"
+            formControlName="recordNumber" name="recordNumber" />
+          <mat-error *ngIf="form.controls.recordNumber.invalid && form.controls.recordNumber.touched">
+            <span *ngIf="form.controls.recordNumber.errors?.required">Campo obrigatório</span>
+          </mat-error>
         </mat-form-field>
-        <label for="formFile" class="form-label">Bula do profissional da saúde</label>
-        <div class="input-group mb-3">
 
+        <label for="formFile" class="form-label">Bula do profissional da saúde (arquivo.pdf)</label>
+        <div class="input-group mb-3">
           <input type="file" accept=".pdf" (change)="addFile($event)" [multiple]=false class="form-control"
             id="bullProfessionalHealth">
         </div>
-        <label for="formFile" class="form-label">Bula do paciente</label>
+        <label for="formFile" class="form-label">Bula do paciente (arquivo.pdf)</label>
         <div class="input-group mb-3">
           <input type="file" accept=".pdf" (change)="addFile($event)" [multiple]=false class="form-control"
             id="bullPatient">
         </div>
-        <label for="formFile" class="form-label">Ficha técnica do produto</label>
+        <label for="formFile" class="form-label">Ficha técnica do produto (arquivo.xls)</label>
         <div class="input-group mb-3">
           <input type="file" accept=".xls,.xlsx" (change)="addFile($event)" [multiple]=false class="form-control"
             id="tokenTechniqueProduct">

@@ -3,6 +3,7 @@ import { Component } from '@angular/core';
 import { Router } from '@angular/router';
 import { BlogForm } from 'src/app/models/blog.model';
 import { BlogService } from 'src/app/services/blog.service';
+import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 
 @Component({
   selector: 'app-blog',
@@ -68,7 +69,14 @@ export class BlogCreateComponent {
     },
   };
 
-  constructor(private blogService: BlogService, private router: Router) { }
+  constructor(private formBuilder: FormBuilder, private blogService: BlogService, private router: Router) { }
+
+  form: FormGroup = this.formBuilder.group({
+    title: [null, [Validators.required]],
+    description: [null, [Validators.required]],
+    content: [null, [Validators.required]],
+    photograph: [null, [Validators.required]],
+  })
 
   addFile(ev: any) {
     console.log(ev.target.files)

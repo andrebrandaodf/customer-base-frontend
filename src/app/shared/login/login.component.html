@@ -2,7 +2,7 @@
     <mat-card class="mat-elevation-z8">
         <mat-card-header>
             <mat-card-title>
-                <img mat-card-image src="/assets/img/logo.png" style="transform: translateZ(5px);" />
+                <img mat-card-image src="/assets/img/logo.png" style="transform: translateZ(5px); " />
             </mat-card-title>
         </mat-card-header>
         <mat-card-content>
@@ -26,10 +26,10 @@
                     <tr>
                         <td>
                             <mat-form-field>
-                                <input matInput [type]="hide ? 'password' : 'text'" placeholder="Password"
+                                <input matInput [type]="hidePassword ? 'password' : 'text'" placeholder="Password"
                                     type="password" formControlName="password" name="password" required>
 
-                                <button mat-icon-button matSuffix (click)="hide = !hide"
+                                <button mat-icon-button matSuffix (click)="hidePassword = !hidePassword"
                                     [attr.aria-label]="'Hide password'" [attr.aria-pressed]="hide">
                                     <mat-icon>{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
                                 </button>

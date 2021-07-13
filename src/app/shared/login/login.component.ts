@@ -11,6 +11,7 @@ import { User } from '../../models/user.model';
 })
 export class LoginComponent implements OnInit {
   hide = true;
+  hidePassword = true;
   user: User = new User();
 
   constructor(private formBuilder: FormBuilder, private authService: AuthService, private router: Router) { }

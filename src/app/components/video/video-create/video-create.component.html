@@ -2,16 +2,25 @@
   <div class="mat-elevation-z2">
     <mat-card class="novoProduto">
       <mat-card-title class="title-matCard">Novo Vídeo</mat-card-title>
-      <form>
+      <form [formGroup]="form">
         <mat-form-field>
-          <input matInput placeholder="Título" [(ngModel)]="video.title" name="title" />
+          <input matInput placeholder="Título" [(ngModel)]="video.title" formControlName="title" name="title" />
+          <mat-error *ngIf="form.controls.title.invalid && form.controls.title.touched">
+            <span *ngIf="form.controls.title.errors?.required">Campo obrigatório</span>
+          </mat-error>
         </mat-form-field>
         <mat-form-field>
           <textarea type="text" maxlength="350" matInput placeholder="Descrição" [(ngModel)]="video.description"
-            name="description"></textarea>
+            formControlName="description" name="description"></textarea>
+          <mat-error *ngIf="form.controls.description.invalid && form.controls.description.touched">
+            <span *ngIf="form.controls.description.errors?.required">Campo obrigatório</span>
+          </mat-error>
         </mat-form-field>
         <mat-form-field>
-          <input matInput placeholder="URL Vídeo" [(ngModel)]="video.urlVideo" name="url" />
+          <input matInput placeholder="URL Vídeo" [(ngModel)]="video.urlVideo" formControlName="urlVideo" name="url" />
+          <mat-error *ngIf="form.controls.urlVideo.invalid && form.controls.urlVideo.touched">
+            <span *ngIf="form.controls.urlVideo.errors?.required">Campo obrigatório</span>
+          </mat-error>
         </mat-form-field>
       </form>
     </mat-card>
