@@ -3,7 +3,9 @@ import { Component } from '@angular/core';
 import { Router } from '@angular/router';
 import { BlogForm } from 'src/app/models/blog.model';
 import { BlogService } from 'src/app/services/blog.service';
-import { FormGroup, FormBuilder, Validators } from '@angular/forms';
+import { FormGroup, FormBuilder, Validators, FormControl } from '@angular/forms';
+import { MaxSizeValidator } from '@angular-material-components/file-input';
+
 
 @Component({
   selector: 'app-blog',
@@ -12,6 +14,10 @@ import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 })
 export class BlogCreateComponent {
   blog: BlogForm = new BlogForm();
+
+  public files: any;
+  maxSize = 16;
+  fileControl!: FormControl;
 
   config = {
     height: 500,
@@ -69,7 +75,22 @@ export class BlogCreateComponent {
     },
   };
 
-  constructor(private formBuilder: FormBuilder, private blogService: BlogService, private router: Router) { }
+  constructor(private formBuilder: FormBuilder, private blogService: BlogService, private router: Router) {
+    this.fileControl = new FormControl(this.files, [
+      Validators.required,
+      MaxSizeValidator(this.maxSize * 1024)
+    ])
+  }
+
+  ngOnInit() {
+    this.fileControl.valueChanges.subscribe((files: any) => {
+      if (!Array.isArray(files)) {
+        this.files = [files];
+      } else {
+        this.files = files;
+      }
+    })
+  }
 
   form: FormGroup = this.formBuilder.group({
     title: [null, [Validators.required]],
@@ -86,11 +107,11 @@ export class BlogCreateComponent {
   createBlog(): void {
 
     const formData = new FormData();
-    formData.append('title', this.blog.title);
-    formData.append('description', this.blog.description);
-    formData.append('content', this.blog.content);
+    formData.append('title', this.form.value.title);
+    formData.append('description', this.form.value.description);
+    formData.append('content', this.form.value.content);
 
-    formData.append('photograph', this.blog.photograph, this.blog.photograph.name);
+    formData.append('photograph', this.form.value.photograph, this.form.value.photograph.name);
 
     this.blogService.create(formData).subscribe(() => {
       this.blogService.showMessage('Blog cadastrado!');

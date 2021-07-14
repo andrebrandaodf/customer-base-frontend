@@ -31,21 +31,47 @@
           </mat-error>
         </mat-form-field>
 
-        <label for="formFile" class="form-label">Bula do profissional da saúde (arquivo.pdf)</label>
+        <mat-form-field appearance="outline">
+          <mat-label>Bula do profissional da saúde</mat-label>
+          <mat-hint>(arquivo.pdf)</mat-hint>
+          <ngx-mat-file-input class="form-label" accept=".pdf" formControlName="bullProfessionalHealth"
+            name="bullProfessionalHealth">
+          </ngx-mat-file-input>
+        </mat-form-field>
+
+        <mat-form-field appearance="outline">
+          <mat-label>Bula do paciente</mat-label>
+          <mat-hint>(arquivo.pdf)</mat-hint>
+          <ngx-mat-file-input class="form-label" accept=".pdf" formControlName="bullPatient" name="bullPatient">
+          </ngx-mat-file-input>
+        </mat-form-field>
+
+        <mat-form-field appearance="outline">
+          <mat-label>Ficha técnica do produto</mat-label>
+          <mat-hint>(arquivo.xls, xlsx)</mat-hint>
+          <ngx-mat-file-input class="form-label" accept=".xls,.xlsx" formControlName="tokenTechniqueProduct"
+            name="tokenTechniqueProduct">
+          </ngx-mat-file-input>
+        </mat-form-field>
+
+        <!-- <label for="formFile" class="form-label">Bula do profissional da saúde (arquivo.pdf)</label>
         <div class="input-group mb-3">
           <input type="file" accept=".pdf" (change)="addFile($event)" [multiple]=false class="form-control"
             id="bullProfessionalHealth">
-        </div>
-        <label for="formFile" class="form-label">Bula do paciente (arquivo.pdf)</label>
+        </div> -->
+
+        <!-- <label for="formFile" class="form-label">Bula do paciente (arquivo.pdf)</label>
         <div class="input-group mb-3">
           <input type="file" accept=".pdf" (change)="addFile($event)" [multiple]=false class="form-control"
             id="bullPatient">
-        </div>
-        <label for="formFile" class="form-label">Ficha técnica do produto (arquivo.xls)</label>
+        </div> -->
+
+        <!-- <label for="formFile" class="form-label">Ficha técnica do produto (arquivo.xls)</label>
         <div class="input-group mb-3">
           <input type="file" accept=".xls,.xlsx" (change)="addFile($event)" [multiple]=false class="form-control"
             id="tokenTechniqueProduct">
-        </div>
+        </div> -->
+
       </form>
     </mat-card>
   </div>
