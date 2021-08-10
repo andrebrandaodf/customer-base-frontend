@@ -89,14 +89,6 @@ export class ClientCreateComponent implements OnInit {
     );
   }
 
-  // createClient(): void {
-  //   this.clientService.create(this.client).subscribe(() => {
-  //     this.addressService.create(this.address)
-  //     this.clientService.showMessage('Cliente cadastrado!')
-  //     this.router.navigate(['/client'])
-  //   })
-  // }
-
   cancel(): void {
     this.router.navigate(['admin/client']);
   }
