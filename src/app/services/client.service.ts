@@ -22,7 +22,7 @@ export class ClientService {
     });
   }
 
-  create(client: FormData) {
+  create(client: Client) {
     return this.http.post(`${environment.baseUrl}/client`, client);
   }
 
@@ -39,7 +39,7 @@ export class ClientService {
     return this.http.get<Client>(url);
   }
 
-  update(client: FormData) {
+  update(client: Client) {
     const url = `${environment.baseUrl}/client`;
     return this.http.put<Client>(url, client).pipe(
       map((obj) => obj),

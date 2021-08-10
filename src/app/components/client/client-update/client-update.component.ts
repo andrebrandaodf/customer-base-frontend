@@ -40,31 +40,12 @@ export class ClientUpdateComponent implements OnInit {
     );
   }
 
-  form: FormGroup = this.formBuilder.group({
-    name: [null, [Validators.required]],
-    cpf: [null, [Validators.required]],
-    address: [null, [Validators.required]],
-    phone: [null, [Validators.required]],
-    email: [null, [Validators.required]]
-  })
-
   updateClient(): void {
-    if (this.form.invalid) {
-      this.form.markAllAsTouched();
-      return;
-    }
-    const formData = new FormData();
-    console.log(formData)
-    formData.append('name', this.form.value.name);
-    formData.append('cpf', this.form.value.cpf);
-    formData.append('address', this.form.value.address);
-    formData.append('phone', this.form.value.phone);
-    formData.append('email', this.form.value.phone);
-
-    this.clientService.create(formData).subscribe(() => {
-      this.clientService.showMessage('Cliente cadastrado!');
-      this.router.navigate(['admin/client']);
-    });
+    console.log(this.client);
+    this.clientService.update(this.client).subscribe(() => {
+      this.clientService.showMessage('Cliente atualizado com sucesso!')
+      this.router.navigate(['/client']);
+    })
   }
 
   cancel(): void {

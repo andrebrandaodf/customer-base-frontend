@@ -2,30 +2,22 @@
   <div class="mat-elevation-z2">
     <mat-card class="novoClient">
       <mat-card-title class="title-matCard">Novo Cliente</mat-card-title>
-      <form [formGroup]="form" class="d-flex ng-untouched ng-pristine ng-valid">
+      <form class="d-flex ng-untouched ng-pristine ng-valid">
         <mat-form-field>
           <input matInput placeholder="Nome" [(ngModel)]="client.name" name="name">
-          <mat-error *ngIf="form.controls.name.invalid && form.controls.name.touched">
-            <span *ngIf="form.controls.name.errors?.required">Campo obrigatório</span>
-          </mat-error>
         </mat-form-field>
 
         <mat-form-field>
           <input matInput placeholder="CPF" mask="000.000.000-00" [(ngModel)]="client.cpf" name="cpf">
-          <mat-error *ngIf="form.controls.cpf.invalid && form.controls.cpf.touched">
-            <span *ngIf="form.controls.name.errors?.required">Campo obrigatório</span>
-          </mat-error>
         </mat-form-field>
       </form>
       <mat-card-title>Endereço</mat-card-title>
-      <form>
-        <mat-form-field>
+      <form class="d-flex ng-untouched ng-pristine ng-valid">
+        <!-- <mat-form-field>
           <input matInput placeholder="Cep" (change)="getCep($event.target.value)" [(ngModel)]="client.address.cep"
             name="cep">
-          <mat-error *ngIf="form.controls.cep.invalid && form.controls.cep.touched">
-            <span *ngIf="form.controls.cep.errors?.required">Campo obrigatório</span>
-          </mat-error>
-        </mat-form-field>
+        </mat-form-field> -->
+
         <mat-form-field>
           <input matInput placeholder="Logradouro" [(ngModel)]="client.address.logradouro" name="logradouro">
         </mat-form-field>
@@ -48,15 +40,11 @@
       <form>
         <mat-form-field>
           <input matInput placeholder="Telefone" [(ngModel)]="client.phone" name="phone">
-          <mat-error *ngIf="form.controls.phone.invalid && form.controls.phone.touched">
-            <span *ngIf="form.controls.phone.errors?.required">Campo obrigatório</span>
-          </mat-error>
+
         </mat-form-field>
         <mat-form-field>
           <input matInput placeholder="Email" [(ngModel)]="client.email" name="email">
-          <mat-error *ngIf="form.controls.email.invalid && form.controls.email.touched">
-            <span *ngIf="form.controls.email.errors?.required">Campo obrigatório</span>
-          </mat-error>
+
         </mat-form-field>
       </form>
     </mat-card>

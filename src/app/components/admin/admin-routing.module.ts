@@ -2,6 +2,10 @@ import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { AdminComponent } from './admin.component';
 import { HomeComponent } from 'src/app/views/home/home.component';
+import { ClientCrudComponent } from 'src/app/views/client-crud/client-crud.component';
+import { ClientCreateComponent } from '../client/client-create/client-create.component';
+import { ClientUpdateComponent } from '../client/client-update/client-update.component';
+import { ClientDeleteComponent } from '../client/client-delete/client-delete.component';
 
 
 const routes: Routes = [
