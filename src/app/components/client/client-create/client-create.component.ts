@@ -60,7 +60,10 @@ export class ProductCreateComponent implements OnInit {
 
 
   createProduct(): void {
-
+    if (this.form.invalid) {
+      this.form.markAllAsTouched();
+      return;
+    }
     const formData = new FormData();
     console.log(formData)
     formData.append('name', this.form.value.name);
