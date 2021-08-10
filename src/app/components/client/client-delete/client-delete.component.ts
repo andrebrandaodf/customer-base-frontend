@@ -1,50 +1,48 @@
-import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute, Router } from '@angular/router';
+import { Router, ActivatedRoute } from '@angular/router';
 
-import { ProductService } from 'src/app/services/client.service';
-import { Product } from 'src/app/models/client.model';
+import { Component, OnInit } from '@angular/core';
+import { Client } from 'src/app/models/client.model';
+import { ClientService } from 'src/app/services/client.service';
+
+
 @Component({
-  selector: 'app-product-delete',
-  templateUrl: './product-delete.component.html',
-  styleUrls: ['./product-delete.component.scss'],
+  selector: 'app-clientes-delete',
+  templateUrl: './client-delete.component.html',
+  styleUrls: ['./client-delete.component.scss']
 })
-export class ProductDeleteComponent implements OnInit {
-  product: Product = new Product();
+export class ClientesDeleteComponent implements OnInit {
+
+  client!: Client;
   private id!: number;
 
   constructor(
-    private productService: ProductService,
+    private clientService: ClientService,
     private router: Router,
     private route: ActivatedRoute
   ) { }
 
   ngOnInit(): void {
-    this.route.params.subscribe(
-      (getParam) => {
-        this.productService.readById(getParam.id).subscribe((product: any) => {
-          this.product = product;
-        });
-        this.id = getParam.id;
-      },
-      (erro) => {
-        console.log('Erro ao pegar ID', erro);
-      }
-    );
+    this.route.params.subscribe(getParam => {
+      this.clientService.readById(getParam.id).subscribe((client: any) => {
+        this.client = client;
+      });
+      this.id = getParam.id;
+    }, erro => {
+      console.log('Erro ao pegar ID', erro);
+    });
   }
 
-  deleteProduct(): void {
-    this.productService.delete(this.id).subscribe(
-      () => {
-        this.productService.showMessage('Produto deletado com sucesso!');
-        this.router.navigate(['admin/product']);
-      },
-      (errow: any) => {
-        this.productService.showMessage(`Erro na solicitação: ${errow}`);
-      }
-    );
+  deleteClient(): void {
+    this.clientService.delete(this.id).subscribe(() => {
+      this.clientService.showMessage('Clientes deletado com sucesso!');
+      this.router.navigate(['/client']);
+    }, errow => {
+      this.clientService.showMessage(`Erro na solicitação: ${errow}`);
+    })
   }
 
   cancel(): void {
-    this.router.navigate(['admin/product']);
+    this.router.navigate(['/client']);
   }
+
 }

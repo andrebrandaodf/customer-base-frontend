@@ -1,26 +1,29 @@
 <div class="container-fluid">
   <div class="mat-elevation-z2">
-    <mat-card class="excluirProduto">
-      <mat-card-title>Excluir Produto</mat-card-title>
+    <mat-card class="excluirClient">
+      <mat-card-title>Excluir Cliente</mat-card-title>
       <form>
         <mat-form-field>
-          <input matInput placeholder="Nome" [value]="product.name" name="name" disabled />
+          <input matInput placeholder="Nome" [value]="client.name" name="name" disabled />
         </mat-form-field>
         <mat-form-field>
-          <input matInput placeholder="Apresentação" [value]="product.presentation" name="presentation" disabled />
+          <input matInput placeholder="CPF" [value]="client.cpf" name="presentation" disabled />
         </mat-form-field>
         <mat-form-field>
-          <input matInput placeholder="Número do Registro" [value]="product.recordNumber" name="recordNumber"
-            disabled />
+          <input matInput placeholder="Endereço"
+            value="{{client?.address.cep}} - {{client?.address?.localidade}}, {{client?.address?.uf}}" disabled>
         </mat-form-field>
         <mat-form-field>
-          <input matInput placeholder="Fabricante" [value]="product.manufacturer" name="manufacturer" disabled />
+          <input matInput placeholder="Telefone" [value]="client?.phone" disabled>
+        </mat-form-field>
+        <mat-form-field>
+          <input matInput placeholder="Email" [value]="client?.email" disabled>
         </mat-form-field>
       </form>
     </mat-card>
   </div>
 
-  <button class="mb-2 btn btn-outline-danger" mat-raised-button (click)="deleteProduct()">
+  <button class="mb-2 btn btn-outline-danger" mat-raised-button (click)="deleteClient()">
     Excluir
   </button>
 
