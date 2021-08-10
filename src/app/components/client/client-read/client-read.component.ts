@@ -5,7 +5,7 @@ import { animate, state, style, transition, trigger } from '@angular/animations'
 import { ClientService } from 'src/app/services/client.service';
 
 @Component({
-  selector: 'app-product-read',
+  selector: 'app-client-read',
   templateUrl: './client-read.component.html',
   styleUrls: ['./client-read.component.scss'],
   animations: [

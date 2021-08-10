@@ -7,7 +7,7 @@ import { Component, OnInit } from '@angular/core';
   templateUrl: './client-crud.component.html',
   styleUrls: ['./client-crud.component.scss'],
 })
-export class ProductCrudComponent implements OnInit {
+export class ClientCrudComponent implements OnInit {
   constructor(private router: Router, private headerService: HeaderService) {
     headerService.headerData = {
       title: 'Cadastro de Clientes',

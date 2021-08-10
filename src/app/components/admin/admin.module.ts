@@ -27,6 +27,10 @@ import { HomeComponent } from 'src/app/views/home/home.component';
 
 import { NgxMatFileInputModule } from '@angular-material-components/file-input';
 import { ClientCreateComponent } from '../client/client-create/client-create.component';
+import { ClientDeleteComponent } from '../client/client-delete/client-delete.component';
+import { ClientReadComponent } from '../client/client-read/client-read.component';
+import { ClientUpdateComponent } from '../client/client-update/client-update.component';
+import { ClientCrudComponent } from 'src/app/views/client-crud/client-crud.component';
 
 @NgModule({
   declarations: [
