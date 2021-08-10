@@ -26,6 +26,7 @@ import { EditorModule } from '@tinymce/tinymce-angular';
 import { HomeComponent } from 'src/app/views/home/home.component';
 
 import { NgxMatFileInputModule } from '@angular-material-components/file-input';
+import { ClientCreateComponent } from '../client/client-create/client-create.component';
 
 @NgModule({
   declarations: [

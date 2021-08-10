@@ -1,8 +1,11 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
-import { ProductService } from 'src/app/services/product.service';
 import { FormGroup, FormBuilder, Validators, FormControl } from '@angular/forms';
 import { MaxSizeValidator } from '@angular-material-components/file-input';
+import { ClientService } from 'src/app/services/client.service';
+import { Client } from '../../../models/client.model';
+import { Address } from 'src/app/models/address.model';
+import { AddressService } from 'src/app/services/address.service';
 
 
 @Component({
@@ -12,11 +15,28 @@ import { MaxSizeValidator } from '@angular-material-components/file-input';
 })
 export class ClientCreateComponent implements OnInit {
 
+  address!: Address;
+  client: Client = {
+    name: '',
+    cpf: '',
+    address: {
+      cep: '',
+      logradouro: '',
+      bairro: '',
+      localidade: '',
+      uf: '',
+      complemento: ''
+    },
+    phone: '',
+    email: ''
+  }
+
+
   public files: any;
   maxSize = 16;
   fileControl!: FormControl;
 
-  constructor(private formBuilder: FormBuilder, private productService: ProductService, private router: Router) {
+  constructor(private formBuilder: FormBuilder, private clientService: ClientService, private addressService: AddressService, private router: Router) {
     this.fileControl = new FormControl(this.files, [
       Validators.required,
       MaxSizeValidator(this.maxSize * 1024)
@@ -35,15 +55,13 @@ export class ClientCreateComponent implements OnInit {
 
   form: FormGroup = this.formBuilder.group({
     name: [null, [Validators.required]],
-    presentation: [null, [Validators.required]],
-    manufacturer: [null, [Validators.required]],
-    recordNumber: [null, [Validators.required]],
-    bullProfessionalHealth: [null, [Validators.required]],
-    bullPatient: [null, [Validators.required]],
-    tokenTechniqueProduct: [null, [Validators.required]],
+    cpf: [null, [Validators.required]],
+    address: [null, [Validators.required]],
+    phone: [null, [Validators.required]],
+    email: [null, [Validators.required]]
   })
 
-  createProduct(): void {
+  createClient(): void {
     if (this.form.invalid) {
       this.form.markAllAsTouched();
       return;
@@ -51,20 +69,33 @@ export class ClientCreateComponent implements OnInit {
     const formData = new FormData();
     console.log(formData)
     formData.append('name', this.form.value.name);
-    formData.append('presentation', this.form.value.presentation);
-    formData.append('manufacturer', this.form.value.manufacturer);
-    formData.append('recordNumber', this.form.value.recordNumber);
+    formData.append('cpf', this.form.value.cpf);
+    formData.append('address', this.form.value.address);
+    formData.append('phone', this.form.value.phone);
+    formData.append('email', this.form.value.phone);
 
-    console.log(this.form)
-    formData.append('bullProfessionalHealth', this.form.value.bullProfessionalHealth, this.form.value.bullProfessionalHealth.name);
-    formData.append('bullPatient', this.form.value.bullPatient, this.form.value.bullPatient.name);
-    formData.append('tokenTechniqueProduct', this.form.value.tokenTechniqueProduct, this.form.value.tokenTechniqueProduct.name);
-
-    this.productService.create(formData).subscribe(() => {
-      this.productService.showMessage('Cliente cadastrado!');
+    this.clientService.create(formData).subscribe(() => {
+      this.clientService.showMessage('Cliente cadastrado!');
       this.router.navigate(['admin/client']);
     });
   }
+
+  getCep(cep: string) {
+    let cepOnlyNumber = Number(cep.replace(/[^0-9]/g, ''));
+    this.clientService.getCep(cepOnlyNumber).subscribe((resp: any) => {
+      this.client.address = resp;
+      console.log(resp);
+    }
+    );
+  }
+
+  // createClient(): void {
+  //   this.clientService.create(this.client).subscribe(() => {
+  //     this.addressService.create(this.address)
+  //     this.clientService.showMessage('Cliente cadastrado!')
+  //     this.router.navigate(['/client'])
+  //   })
+  // }
 
   cancel(): void {
     this.router.navigate(['admin/client']);

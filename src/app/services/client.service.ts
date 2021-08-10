@@ -10,6 +10,7 @@ import { Client } from '../models/client.model';
   providedIn: 'root',
 })
 export class ClientService {
+  [x: string]: any;
   constructor(private snackBar: MatSnackBar, private http: HttpClient) { }
 
   showMessage(msg: string, isError: boolean = false): void {

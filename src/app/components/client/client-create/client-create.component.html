@@ -1,81 +1,67 @@
 <div class="container-fluid">
   <div class="mat-elevation-z2">
     <mat-card class="novoProduto">
-      <mat-card-title class="title-matCard">Novo Produto</mat-card-title>
+      <mat-card-title class="title-matCard">Novo Cliente</mat-card-title>
       <form [formGroup]="form" class="d-flex ng-untouched ng-pristine ng-valid">
         <mat-form-field>
-          <input matInput placeholder="Nome do Produto" [(ngModel)]="product.name" formControlName="name" name="name" />
+          <input matInput placeholder="Nome" [(ngModel)]="client.name" name="name">
           <mat-error *ngIf="form.controls.name.invalid && form.controls.name.touched">
             <span *ngIf="form.controls.name.errors?.required">Campo obrigatório</span>
           </mat-error>
         </mat-form-field>
+
         <mat-form-field>
-          <textarea type="text" maxlength="800" matInput placeholder="Apresentação" [(ngModel)]="product.presentation"
-            formControlName="presentation" name="presentation"></textarea>
-          <mat-error *ngIf="form.controls.presentation.invalid && form.controls.name.touched">
-            <span *ngIf="form.controls.presentation.errors?.required">Campo obrigatório</span>
+          <input matInput placeholder="CPF" mask="000.000.000-00" [(ngModel)]="client.cpf" name="cpf">
+          <mat-error *ngIf="form.controls.cpf.invalid && form.controls.cpf.touched">
+            <span *ngIf="form.controls.name.errors?.required">Campo obrigatório</span>
+          </mat-error>
+        </mat-form-field>
+      </form>
+      <mat-card-title>Endereço</mat-card-title>
+      <form>
+        <mat-form-field>
+          <input matInput placeholder="Cep" (change)="getCep($event.target.value)" [(ngModel)]="client.address.cep"
+            name="cep">
+          <mat-error *ngIf="form.controls.cep.invalid && form.controls.cep.touched">
+            <span *ngIf="form.controls.cep.errors?.required">Campo obrigatório</span>
           </mat-error>
         </mat-form-field>
         <mat-form-field>
-          <input matInput placeholder="Fabricante" [(ngModel)]="product.manufacturer" formControlName="manufacturer"
-            name="manufacturer" />
-          <mat-error *ngIf="form.controls.manufacturer.invalid && form.controls.manufacturer.touched">
-            <span *ngIf="form.controls.manufacturer.errors?.required">Campo obrigatório</span>
+          <input matInput placeholder="Logradouro" [(ngModel)]="client.address.logradouro" name="logradouro">
+        </mat-form-field>
+        <mat-form-field>
+          <input matInput placeholder="Bairro" [(ngModel)]="client.address.bairro" name="bairro">
+        </mat-form-field>
+        <mat-form-field>
+          <input matInput placeholder="Cidade" [(ngModel)]="client.address.localidade" name="localidade">
+        </mat-form-field>
+        <mat-form-field>
+          <input matInput placeholder="UF" [(ngModel)]="client.address.uf" name="uf">
+        </mat-form-field>
+        <mat-form-field>
+          <input matInput placeholder="Complemento" [(ngModel)]="client.address.complemento" name="complemento">
+        </mat-form-field>
+      </form>
+
+
+      <mat-card-title>Contatos</mat-card-title>
+      <form>
+        <mat-form-field>
+          <input matInput placeholder="Telefone" [(ngModel)]="client.phone" name="phone">
+          <mat-error *ngIf="form.controls.phone.invalid && form.controls.phone.touched">
+            <span *ngIf="form.controls.phone.errors?.required">Campo obrigatório</span>
           </mat-error>
         </mat-form-field>
         <mat-form-field>
-          <input matInput placeholder="Número do Registro" [(ngModel)]="product.recordNumber"
-            formControlName="recordNumber" name="recordNumber" />
-          <mat-error *ngIf="form.controls.recordNumber.invalid && form.controls.recordNumber.touched">
-            <span *ngIf="form.controls.recordNumber.errors?.required">Campo obrigatório</span>
+          <input matInput placeholder="Email" [(ngModel)]="client.email" name="email">
+          <mat-error *ngIf="form.controls.email.invalid && form.controls.email.touched">
+            <span *ngIf="form.controls.email.errors?.required">Campo obrigatório</span>
           </mat-error>
         </mat-form-field>
-
-        <mat-form-field appearance="outline">
-          <mat-label>Bula do profissional da saúde</mat-label>
-          <mat-hint>(arquivo.pdf)</mat-hint>
-          <ngx-mat-file-input class="form-label" accept=".pdf" formControlName="bullProfessionalHealth"
-            name="bullProfessionalHealth">
-          </ngx-mat-file-input>
-        </mat-form-field>
-
-        <mat-form-field appearance="outline">
-          <mat-label>Bula do paciente</mat-label>
-          <mat-hint>(arquivo.pdf)</mat-hint>
-          <ngx-mat-file-input class="form-label" accept=".pdf" formControlName="bullPatient" name="bullPatient">
-          </ngx-mat-file-input>
-        </mat-form-field>
-
-        <mat-form-field appearance="outline">
-          <mat-label>Ficha técnica do produto</mat-label>
-          <mat-hint>(arquivo.xls, xlsx)</mat-hint>
-          <ngx-mat-file-input class="form-label" accept=".xls,.xlsx" formControlName="tokenTechniqueProduct"
-            name="tokenTechniqueProduct">
-          </ngx-mat-file-input>
-        </mat-form-field>
-
-        <!-- <label for="formFile" class="form-label">Bula do profissional da saúde (arquivo.pdf)</label>
-        <div class="input-group mb-3">
-          <input type="file" accept=".pdf" (change)="addFile($event)" [multiple]=false class="form-control"
-            id="bullProfessionalHealth">
-        </div> -->
-
-        <!-- <label for="formFile" class="form-label">Bula do paciente (arquivo.pdf)</label>
-        <div class="input-group mb-3">
-          <input type="file" accept=".pdf" (change)="addFile($event)" [multiple]=false class="form-control"
-            id="bullPatient">
-        </div> -->
-
-        <!-- <label for="formFile" class="form-label">Ficha técnica do produto (arquivo.xls)</label>
-        <div class="input-group mb-3">
-          <input type="file" accept=".xls,.xlsx" (change)="addFile($event)" [multiple]=false class="form-control"
-            id="tokenTechniqueProduct">
-        </div> -->
-
       </form>
     </mat-card>
   </div>
-  <button class="mb-2 btn btn-outline-success" mat-raised-button (click)="createProduct()">
+  <button class="mb-2 btn btn-outline-success" mat-raised-button (click)="createClient()">
     Salvar
   </button>
 

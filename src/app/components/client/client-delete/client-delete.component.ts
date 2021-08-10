@@ -1,8 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 
-import { ProductService } from 'src/app/services/product.service';
-import { Product } from 'src/app/models/product.model';
+import { ProductService } from 'src/app/services/client.service';
+import { Product } from 'src/app/models/client.model';
 @Component({
   selector: 'app-product-delete',
   templateUrl: './product-delete.component.html',

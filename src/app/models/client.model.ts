@@ -1,9 +1,9 @@
 import { Address } from './address.model';
 export interface Client {
   id?: number;
-  nome: string;
+  name: string;
   cpf: string;
   address: Address;
-  telefone: string;
+  phone: string;
   email: string;
 }
