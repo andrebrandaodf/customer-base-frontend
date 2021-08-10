@@ -150,7 +150,7 @@ $mat-dark-theme-background: (
 // Theme Config
 
 body {
-  --primary-color: #25aa76;
+  --primary-color: #EF396E;
   --primary-lighter-color: #bee6d6;
   --primary-darker-color: #169059;
   --text-primary-color: #{$light-primary-text};
@@ -158,10 +158,10 @@ body {
   --text-primary-darker-color: #{$light-primary-text};
 }   
 $mat-primary: (
-  main: #25aa76,
+  main: #EF396E,
   lighter: #bee6d6,
   darker: #169059,
-  200: #25aa76, // For slide toggle,
+  200: #EF396E, // For slide toggle,
   contrast : (
     main: $light-primary-text,
     lighter: $dark-primary-text,
@@ -260,5 +260,5 @@ $altTheme: (
 }
 
 .title-matCard{
-  color: #25aa76
+  color: #EF396E
 }
