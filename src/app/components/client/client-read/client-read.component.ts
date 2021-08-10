@@ -1,13 +1,13 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
 import { MatPaginator } from '@angular/material/paginator';
-import { ProductService } from 'src/app/services/client.service';
 import { MatTableDataSource } from '@angular/material/table';
 import { animate, state, style, transition, trigger } from '@angular/animations';
+import { ClientService } from 'src/app/services/client.service';
 
 @Component({
   selector: 'app-product-read',
-  templateUrl: './product-read.component.html',
-  styleUrls: ['./product-read.component.scss'],
+  templateUrl: './client-read.component.html',
+  styleUrls: ['./client-read.component.scss'],
   animations: [
     trigger('detailExpand', [
       state('collapsed', style({ height: '0px', minHeight: '0' })),
@@ -17,7 +17,7 @@ import { animate, state, style, transition, trigger } from '@angular/animations'
   ],
 })
 
-export class ProductReadComponent implements OnInit {
+export class ClientReadComponent implements OnInit {
 
   @ViewChild(MatPaginator) paginator!: MatPaginator;
 
@@ -29,12 +29,11 @@ export class ProductReadComponent implements OnInit {
 
   columnsToDisplay = [
     'name',
-    'recordNumber',
-    'manufacturer',
-    'action',
+    'address',
+    'actions',
   ];
 
-  constructor(private productService: ProductService) {
+  constructor(private clientService: ClientService) {
     this.dataSource = new MatTableDataSource();
   }
 
@@ -57,7 +56,7 @@ export class ProductReadComponent implements OnInit {
 
   getAllPaginator() {
     this.isLoading = true;
-    this.productService.getAll().subscribe((res: any) => {
+    this.clientService.getAll().subscribe((res: any) => {
       this.dataSource = new MatTableDataSource(res || []);
       setTimeout(() => this.dataSource.paginator = this.paginator);
       this.isLoading = false;

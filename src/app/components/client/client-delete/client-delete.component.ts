@@ -6,11 +6,11 @@ import { ClientService } from 'src/app/services/client.service';
 
 
 @Component({
-  selector: 'app-clientes-delete',
+  selector: 'app-client-delete',
   templateUrl: './client-delete.component.html',
   styleUrls: ['./client-delete.component.scss']
 })
-export class ClientesDeleteComponent implements OnInit {
+export class ClientDeleteComponent implements OnInit {
 
   client!: Client;
   private id!: number;
