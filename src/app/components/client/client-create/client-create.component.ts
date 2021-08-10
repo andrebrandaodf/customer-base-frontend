@@ -1,18 +1,16 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
-import { ProductForm } from 'src/app/models/product.model';
 import { ProductService } from 'src/app/services/product.service';
 import { FormGroup, FormBuilder, Validators, FormControl } from '@angular/forms';
 import { MaxSizeValidator } from '@angular-material-components/file-input';
 
 
 @Component({
-  selector: 'app-product',
-  templateUrl: './product-create.component.html',
-  styleUrls: ['./product-create.component.scss'],
+  selector: 'app-client',
+  templateUrl: './client-create.component.html',
+  styleUrls: ['./client-create.component.scss'],
 })
-export class ProductCreateComponent implements OnInit {
-  product: ProductForm = new ProductForm();
+export class ClientCreateComponent implements OnInit {
 
   public files: any;
   maxSize = 16;
@@ -45,20 +43,6 @@ export class ProductCreateComponent implements OnInit {
     tokenTechniqueProduct: [null, [Validators.required]],
   })
 
-  // addFileTokenTechniqueProduct(ev: any) {
-  //   console.log(ev.target.files)
-  //   this.product.tokenTechniqueProduct = ev.target.files[0];
-  // }
-  // addFileBullPatient(ev: any) {
-  //   console.log(ev.target.files)
-  //   this.product.bullPatient = ev.target.files[0];
-  // }
-  // addFileBullProfessionalHealth(ev: any) {
-  //   console.log(ev.target.files)
-  //   this.product.bullProfessionalHealth = ev.target.files[0];
-  // }
-
-
   createProduct(): void {
     if (this.form.invalid) {
       this.form.markAllAsTouched();
@@ -77,12 +61,12 @@ export class ProductCreateComponent implements OnInit {
     formData.append('tokenTechniqueProduct', this.form.value.tokenTechniqueProduct, this.form.value.tokenTechniqueProduct.name);
 
     this.productService.create(formData).subscribe(() => {
-      this.productService.showMessage('Produto cadastrado!');
-      this.router.navigate(['admin/product']);
+      this.productService.showMessage('Cliente cadastrado!');
+      this.router.navigate(['admin/client']);
     });
   }
 
   cancel(): void {
-    this.router.navigate(['admin/product']);
+    this.router.navigate(['admin/client']);
   }
 }
