@@ -31,7 +31,8 @@ export class ClientUpdateComponent implements OnInit {
       console.log('Erro ao pegar ID', erro);
     });
   }
-  getCep(cep: string) {
+  getCep(event: any) {
+    let cep = (event.target as HTMLInputElement).value;
     let cepOnlyNumber = Number(cep.replace(/[^0-9]/g, ''));
     this.clientService.getCep(cepOnlyNumber).subscribe((resp: any) => {
       this.client.address = resp;
