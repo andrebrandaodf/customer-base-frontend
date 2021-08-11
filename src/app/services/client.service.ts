@@ -23,7 +23,12 @@ export class ClientService {
   }
 
   create(client: Client) {
+
     return this.http.post(`${environment.baseUrl}/client`, client);
+  }
+
+  getCep(cep: number) {
+    return this.http.get(`http://localhost:8080/cep/${cep}`);
   }
 
   getAll() {

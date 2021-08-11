@@ -34,7 +34,8 @@ export class ClientCreateComponent implements OnInit {
   ngOnInit(): void {
   }
 
-  getCep(cep: string) {
+  getCep(event: any) {
+    let cep = (event.target as HTMLInputElement).value;
     let cepOnlyNumber = Number(cep.replace(/[^0-9]/g, ''));
     this.clientService.getCep(cepOnlyNumber).subscribe((resp: any) => {
       this.client.address = resp;
@@ -47,11 +48,11 @@ export class ClientCreateComponent implements OnInit {
     this.clientService.create(this.client).subscribe(() => {
       this.addressService.create(this.address)
       this.clientService.showMessage('Cliente cadastrado!')
-      this.router.navigate(['/client'])
+      this.router.navigate(['admin/client'])
     })
   }
 
   cancel(): void {
-    this.router.navigate(['/client'])
+    this.router.navigate(['admin/client'])
   }
 }

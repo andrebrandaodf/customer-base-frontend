@@ -10,13 +10,11 @@
         <mat-form-field>
           <input matInput placeholder="CPF" mask="000.000.000-00" [(ngModel)]="client.cpf" name="cpf">
         </mat-form-field>
-      </form>
-      <mat-card-title>Endereço</mat-card-title>
-      <form class="d-flex ng-untouched ng-pristine ng-valid">
-        <!-- <mat-form-field>
-          <input matInput placeholder="Cep" (change)="getCep($event.target.value)" [(ngModel)]="client.address.cep"
-            name="cep">
-        </mat-form-field> -->
+        <mat-card-title class="title-matCard">Endereço</mat-card-title>
+
+        <mat-form-field>
+          <input matInput placeholder="Cep" (change)="getCep($event)" [(ngModel)]="client.address.cep" name="cep">
+        </mat-form-field>
 
         <mat-form-field>
           <input matInput placeholder="Logradouro" [(ngModel)]="client.address.logradouro" name="logradouro">
@@ -33,11 +31,8 @@
         <mat-form-field>
           <input matInput placeholder="Complemento" [(ngModel)]="client.address.complemento" name="complemento">
         </mat-form-field>
-      </form>
 
-
-      <mat-card-title>Contatos</mat-card-title>
-      <form>
+        <mat-card-title class="title-matCard">Contatos</mat-card-title>
         <mat-form-field>
           <input matInput placeholder="Telefone" [(ngModel)]="client.phone" name="phone">
 

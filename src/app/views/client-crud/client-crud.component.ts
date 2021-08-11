@@ -18,7 +18,7 @@ export class ClientCrudComponent implements OnInit {
 
   ngOnInit(): void { }
 
-  navigateToProductCreate(): void {
+  navigateToClientCreate(): void {
     this.router.navigate(['admin/client/create']);
   }
 }

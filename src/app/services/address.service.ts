@@ -9,7 +9,7 @@ import { Address } from '../models/address.model';
   providedIn: 'root'
 })
 export class AddressService {
-  baseUrl = "http://localhost:3001/client";
+  baseUrl = "http://localhost:8080/client";
 
   constructor(private snackBar: MatSnackBar, private http: HttpClient) {
 

@@ -34,15 +34,15 @@ export class ClientDeleteComponent implements OnInit {
 
   deleteClient(): void {
     this.clientService.delete(this.id).subscribe(() => {
-      this.clientService.showMessage('Clientes deletado com sucesso!');
-      this.router.navigate(['/client']);
+      this.clientService.showMessage('Cliente deletado com sucesso!');
+      this.router.navigate(['admin/client']);
     }, errow => {
       this.clientService.showMessage(`Erro na solicitação: ${errow}`);
     })
   }
 
   cancel(): void {
-    this.router.navigate(['/client']);
+    this.router.navigate(['admin/client']);
   }
 
 }

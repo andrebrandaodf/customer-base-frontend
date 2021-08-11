@@ -44,12 +44,12 @@ export class ClientUpdateComponent implements OnInit {
     console.log(this.client);
     this.clientService.update(this.client).subscribe(() => {
       this.clientService.showMessage('Cliente atualizado com sucesso!')
-      this.router.navigate(['/client']);
+      this.router.navigate(['admin/client']);
     })
   }
 
   cancel(): void {
-    this.router.navigate(['/client']);
+    this.router.navigate(['admin/client']);
   }
 
 }

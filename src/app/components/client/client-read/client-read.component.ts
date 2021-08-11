@@ -29,8 +29,9 @@ export class ClientReadComponent implements OnInit {
 
   columnsToDisplay = [
     'name',
+    'cpf',
     'address',
-    'actions',
+    'action',
   ];
 
   constructor(private clientService: ClientService) {
