@@ -45,7 +45,7 @@ export class ClientService {
   }
 
   update(client: Client) {
-    const url = `${environment.baseUrl}/client`;
+    const url = `${environment.baseUrl}/client/${client.id}`;
     return this.http.put<Client>(url, client).pipe(
       map((obj) => obj),
       catchError((e) => this.errorHandler(e))
