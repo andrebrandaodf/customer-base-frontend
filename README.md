@@ -24,5 +24,5 @@ Instalar o angular 12 ou superior.
 
 3. O serviço estará disponível na URL.
 
-http://localhost:4200
+http://localhost:4200/#/
 
